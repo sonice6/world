@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<!-- saved from url=(0020)https://ssr.tools/31 -->
+<html class="gr__ssr_tools"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<link rel="dns-prefetch" href="https://apps.bdimg.com/">
+<meta http-equiv="X-UA-Compatible" content="IE=11,IE=10,IE=9,IE=8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<meta name="apple-mobile-web-app-title" content="SSR中文网">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+<title>SSR一键安装脚本 (ShadowsocksR一键安装教程)-SSR中文网</title>
+<link rel="dns-prefetch" href="https://s.w.org/">
+<link rel="stylesheet" id="crayon-css" href="./SSR一键安装脚本 (ShadowsocksR一键安装教程)-SSR中文网_files/crayon.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="crayon-theme-capacitacionti-css" href="./SSR一键安装脚本 (ShadowsocksR一键安装教程)-SSR中文网_files/capacitacionti.css" type="text/css" media="all">
+<link rel="stylesheet" id="crayon-font-monaco-css" href="./SSR一键安装脚本 (ShadowsocksR一键安装教程)-SSR中文网_files/monaco.css" type="text/css" media="all">
+<link rel="stylesheet" id="_bootstrap-css" href="./SSR一键安装脚本 (ShadowsocksR一键安装教程)-SSR中文网_files/bootstrap.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="_fontawesome-css" href="./SSR一键安装脚本 (ShadowsocksR一键安装教程)-SSR中文网_files/font-awesome.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="_main-css" href="./SSR一键安装脚本 (ShadowsocksR一键安装教程)-SSR中文网_files/main.css" type="text/css" media="all">
+<script type="text/javascript" async="" src="./SSR一键安装脚本 (ShadowsocksR一键安装教程)-SSR中文网_files/analytics.js.下载"></script><script type="text/javascript" src="./SSR一键安装脚本 (ShadowsocksR一键安装教程)-SSR中文网_files/jquery.min.js.下载"></script>
+<link rel="https://api.w.org/" href="https://ssr.tools/wp-json/">
+<link rel="prev" title="个人搭建SSR需要哪些条件？其实很简单！" href="https://ssr.tools/25">
+<link rel="next" title="Youtube观看4K视频时 最高只能设置1080P或720P解决办法" href="https://ssr.tools/45">
+<link rel="canonical" href="https://ssr.tools/31">
+<link rel="shortlink" href="https://ssr.tools/?p=31">
+<link rel="alternate" type="application/json+oembed" href="https://ssr.tools/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fssr.tools%2F31">
+<link rel="alternate" type="text/xml+oembed" href="https://ssr.tools/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fssr.tools%2F31&amp;format=xml">
+<script id="wpcp_disable_selection" type="text/javascript">
+//<![CDATA[
+var image_save_msg='You Can Not Save images!';
+	var no_menu_msg='Context Menu disabled!';
+	var smessage = "";
+
+function disableEnterKey(e)
+{
+	if (e.ctrlKey){
+     var key;
+     if(window.event)
+          key = window.event.keyCode;     //IE
+     else
+          key = e.which;     //firefox (97)
+    //if (key != 17) alert(key);
+     if (key == 97 || key == 65 || key == 67 || key == 99 || key == 88 || key == 120 || key == 26 || key == 85  || key == 86 || key == 83 || key == 43)
+     {
+          show_wpcp_message('You are not allowed to copy content or view source');
+          return false;
+     }else
+     	return true;
+     }
+}
+
+function disable_copy(e)
+{	
+	var elemtype = e.target.nodeName;
+	var isSafari = /Safari/.test(navigator.userAgent) && /Apple Computer/.test(navigator.vendor);
+	elemtype = elemtype.toUpperCase();
+	var checker_IMG = '';
+	if (elemtype == "IMG" && checker_IMG == 'checked' && e.detail >= 2) {show_wpcp_message(alertMsg_IMG);return false;}
+	if (elemtype != "TEXT" && elemtype != "TEXTAREA" && elemtype != "INPUT" && elemtype != "PASSWORD" && elemtype != "SELECT" && elemtype != "OPTION" && elemtype != "EMBED")
+	{
+		if (smessage !== "" && e.detail == 2)
+			show_wpcp_message(smessage);
+		
+		if (isSafari)
+			return true;
+		else
+			return false;
+	}	
+}
+function disable_copy_ie()
+{
+	var elemtype = window.event.srcElement.nodeName;
+	elemtype = elemtype.toUpperCase();
+	if (elemtype == "IMG") {show_wpcp_message(alertMsg_IMG);return false;}
+	if (elemtype != "TEXT" && elemtype != "TEXTAREA" && elemtype != "INPUT" && elemtype != "PASSWORD" && elemtype != "SELECT" && elemtype != "OPTION" && elemtype != "EMBED")
+	{
+		//alert(navigator.userAgent.indexOf('MSIE'));
+			//if (smessage !== "") show_wpcp_message(smessage);
+		return false;
+	}
+}	
+function reEnable()
+{
+	return true;
+}
+document.onkeydown = disableEnterKey;
+document.onselectstart = disable_copy_ie;
+if(navigator.userAgent.indexOf('MSIE')==-1)
+{
+	document.onmousedown = disable_copy;
+	document.onclick = reEnable;
+}
+function disableSelection(target)
+{
+    //For IE This code will work
+    if (typeof target.onselectstart!="undefined")
+    target.onselectstart = disable_copy_ie;
+    
+    //For Firefox This code will work
+    else if (typeof target.style.MozUserSelect!="undefined")
+    {target.style.MozUserSelect="none";}
+    
+    //All other  (ie: Opera) This code will work
+    else
+    target.onmousedown=function(){return false}
+    target.style.cursor = "default";
+}
+//Calling the JS function directly just after body load
+window.onload = function(){disableSelection(document.body);};
+//]]>
+</script>
+<meta name="keywords" content="Shadowsocksr,Shadowsocksr教程,SSR,SSR教程,科学上网工具,个人搭建SSR教程,SSR一键安装教程">
+<meta name="description" content="        搭建SSR的第一步，我们需要有一台较为便宜的国外VPS服务器，如果你还没有，可以参考： 适合安装Shadowsocks的服务器 综合考虑性价比、使用方便程度、连接速度等几个方面，Vultr和搬瓦工是搭建Shadowsocks不错的选择。可以参考分析文章：  适合搭建SSR的国外VPS服务器推荐汇总  搬瓦工官方网站：          搬瓦工">
+<style>a:hover, .site-navbar li:hover > a, .site-navbar li.active a:hover, .site-navbar a:hover, .search-on .site-navbar li.navto-search a, .topbar a:hover, .site-nav li.current-menu-item > a, .site-nav li.current-menu-parent > a, .site-search-form a:hover, .branding-primary .btn:hover, .title .more a:hover, .excerpt h2 a:hover, .excerpt .meta a:hover, .excerpt-minic h2 a:hover, .excerpt-minic .meta a:hover, .article-content .wp-caption:hover .wp-caption-text, .article-content a, .article-nav a:hover, .relates a:hover, .widget_links li a:hover, .widget_categories li a:hover, .widget_ui_comments strong, .widget_ui_posts li a:hover .text, .widget_ui_posts .nopic .text:hover , .widget_meta ul a:hover, .tagcloud a:hover, .textwidget a, .textwidget a:hover, .sign h3, #navs .item li a, .url, .url:hover, .excerpt h2 a:hover span, .widget_ui_posts a:hover .text span, .widget-navcontent .item-01 li a:hover span, .excerpt-minic h2 a:hover span, .relates a:hover span{color: #FF5E52;}.btn-primary, .label-primary, .branding-primary, .post-copyright:hover, .article-tags a, .pagination ul > .active > a, .pagination ul > .active > span, .pagenav .current, .widget_ui_tags .items a:hover, .sign .close-link, .pagemenu li.active a, .pageheader, .resetpasssteps li.active, #navs h2, #navs nav, .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary, .tag-clouds a:hover{background-color: #FF5E52;}.btn-primary, .search-input:focus, #bdcs .bdcs-search-form-input:focus, #submit, .plinks ul li a:hover,.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary{border-color: #FF5E52;}.search-btn, .label-primary, #bdcs .bdcs-search-form-submit, #submit, .excerpt .cat{background-color: #FF5E52;}.excerpt .cat i{border-left-color:#FF5E52;}@media (max-width: 720px) {.site-navbar li.active a, .site-navbar li.active a:hover, .m-nav-show .m-icon-nav{color: #FF5E52;}}@media (max-width: 480px) {.pagination ul > li.next-page a{background-color:#FF5E52;}}.post-actions .action.action-like{background-color: #FF5E52;}</style><link rel="shortcut icon" href="https://ssr.tools/favicon.ico">
+<!--[if lt IE 9]><script src="https://ssr.tools/wp-content/themes/dux/js/libs/html5.min.js"></script><![endif]-->
+<script async="" data-tbquirecontext="_" data-tbquiremodule="main" src="./SSR一键安装脚本 (ShadowsocksR一键安装教程)-SSR中文网_files/main.js.下载"></script><script async="" data-tbquirecontext="_" data-tbquiremodule="lazyload" src="./SSR一键安装脚本 (ShadowsocksR一键安装教程)-SSR中文网_files/lazyload.min.js.下载"></script><script async="" data-tbquirecontext="_" data-tbquiremodule="signpop" src="./SSR一键安装脚本 (ShadowsocksR一键安装教程)-SSR中文网_files/signpop.js.下载"></script><script async="" data-tbquirecontext="_" data-tbquiremodule="jquery.cookie" src="./SSR一键安装脚本 (ShadowsocksR一键安装教程)-SSR中文网_files/jquery.cookie.min.js.下载"></script><script async="" data-tbquirecontext="_" data-tbquiremodule="comment" src="./SSR一键安装脚本 (ShadowsocksR一键安装教程)-SSR中文网_files/comment.js.下载"></script><script src="chrome-extension://mooikfkahbdckldjjndioackbalphokd/assets/prompt.js"></script></head>
+<body class="post-template-default single single-post postid-31 single-format-standard nav_fixed m-excerpt-cat m-excerpt-time flinks-m topbar-off comment-open site-layout-2 none nav-fixed" data-gr-c-s-loaded="true" style="cursor: default;">
+<header class="header">
+	<div class="container">
+		<div class="logo"><a href="https://ssr.tools/" title="SSR中文网-让上网更科学"><img src="./SSR一键安装脚本 (ShadowsocksR一键安装教程)-SSR中文网_files/logo-1.png" alt="SSR中文网-让上网更科学">SSR中文网</a></div>		<div class="brand">欢迎光临
+<br>我们一直在努力</div>		<ul class="site-nav site-navbar">
+			<li id="menu-item-361" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-361"><a href="https://ssr.tools/"><i class="fa fa-home"></i> 主页</a></li>
+<li id="menu-item-149" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-149"><a href="https://ssr.tools/server"><i class="fa fa-server"></i> 服务器 <i class="fa fa-angle-down"></i></a>
+<ul class="sub-menu">
+	<li id="menu-item-256" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-256"><a href="https://ssr.tools/252">SSR 搭建流程</a></li>
+	<li id="menu-item-241" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-241"><a href="https://ssr.tools/55">服务器 推荐</a></li>
+	<li id="menu-item-237" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-237"><a href="https://ssr.tools/72">远程管理工具</a></li>
+	<li id="menu-item-764" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-764"><a href="https://ssr.tools/759">一键测试脚本</a></li>
+	<li id="menu-item-793" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-793"><a href="https://ssr.tools/772">VPS被墙检测</a></li>
+	<li id="menu-item-792" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-792"><a href="https://ssr.tools/780">TCP阻断解决</a></li>
+	<li id="menu-item-239" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-239"><a href="https://ssr.tools/208">搬瓦工攻略</a></li>
+	<li id="menu-item-238" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-238"><a href="https://ssr.tools/216">Vultr 攻略</a></li>
+	<li id="menu-item-1061" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-1061"><a href="https://ssr.tools/999">JustMySock</a></li>
+</ul>
+</li>
+<li id="menu-item-178" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-178"><a href="https://ssr.tools/download"><i class="fa fa-download"></i> 客户端 <i class="fa fa-angle-down"></i></a>
+<ul class="sub-menu">
+	<li id="menu-item-179" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-179"><a href="https://ssr.tools/175">SSR 下载汇总</a></li>
+	<li id="menu-item-181" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-181"><a href="https://ssr.tools/136">SSR 路由器客户端</a></li>
+	<li id="menu-item-184" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-184"><a href="https://ssr.tools/82">SSR 电脑客户端</a></li>
+	<li id="menu-item-183" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-183"><a href="https://ssr.tools/97">SSR 安卓客户端</a></li>
+	<li id="menu-item-182" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-182"><a href="https://ssr.tools/122">SSR iOS 客户端</a></li>
+	<li id="menu-item-180" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-180"><a href="https://ssr.tools/164">SSR MAC 客户端</a></li>
+	<li id="menu-item-743" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-743"><a href="https://ssr.tools/495">GFWList 规则</a></li>
+</ul>
+</li>
+<li id="menu-item-81" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-81"><a href="https://ssr.tools/gongju"><i class="fa fa-life-ring"></i> 备胎 <i class="fa fa-angle-down"></i></a>
+<ul class="sub-menu">
+	<li id="menu-item-435" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-435"><a href="https://ssr.tools/428">Shadowsocks</a></li>
+	<li id="menu-item-322" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-322"><a href="https://ssr.tools/265">V2Ray 搭建</a></li>
+	<li id="menu-item-1201" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-1201"><a href="https://ssr.tools/1198">WireGuard</a></li>
+	<li id="menu-item-980" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-980"><a href="https://ssr.tools/976">Brook 搭建</a></li>
+</ul>
+</li>
+<li id="menu-item-570" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-570"><a href="https://ssr.tools/jiasu"><i class="fa fa-cloud-upload"></i>  加速 <i class="fa fa-angle-down"></i></a>
+<ul class="sub-menu">
+	<li id="menu-item-685" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-685"><a href="https://ssr.tools/674">加速效果 对比</a></li>
+	<li id="menu-item-686" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-686"><a href="https://ssr.tools/668">KVM 加速方案</a></li>
+	<li id="menu-item-687" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-687"><a href="https://ssr.tools/663">OVZ  加速方案</a></li>
+	<li id="menu-item-245" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-245"><a href="https://ssr.tools/199">原版BBR 一键</a></li>
+	<li id="menu-item-571" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-571"><a href="https://ssr.tools/550">魔改BBR 一键</a></li>
+	<li id="menu-item-572" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-572"><a href="https://ssr.tools/533">锐速 一键安装</a></li>
+	<li id="menu-item-587" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-587"><a href="https://ssr.tools/573">锐速 Windows</a></li>
+	<li id="menu-item-604" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-604"><a href="https://ssr.tools/588">KCPTUN 一键</a></li>
+	<li id="menu-item-688" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-688"><a href="https://ssr.tools/637">KCPTUN 客户端</a></li>
+</ul>
+</li>
+<li id="menu-item-22" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-22"><a href="https://ssr.tools/rumen"><i class="fa fa-share-square"></i> 入门 <i class="fa fa-angle-down"></i></a>
+<ul class="sub-menu">
+	<li id="menu-item-242" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-242"><a href="https://ssr.tools/18">SSR 简单介绍</a></li>
+	<li id="menu-item-243" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-243"><a href="https://ssr.tools/25">SSR 所需条件</a></li>
+	<li id="menu-item-244" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-244"><a href="https://ssr.tools/202">SSR 注意事项</a></li>
+</ul>
+</li>
+<li id="menu-item-23" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-ancestor current-menu-parent current-post-parent menu-item-has-children menu-item-23"><a href="https://ssr.tools/jinjie"><i class="fa fa-graduation-cap"></i> 进阶 <i class="fa fa-angle-down"></i></a>
+<ul class="sub-menu">
+	<li id="menu-item-248" class="menu-item menu-item-type-post_type menu-item-object-post current-menu-item menu-item-248"><a href="https://ssr.tools/31">SSR 一键安装</a></li>
+	<li id="menu-item-247" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-247"><a href="https://ssr.tools/116">SSR 内网共享</a></li>
+	<li id="menu-item-262" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-262"><a href="https://ssr.tools/258">SSR 限连 限速</a></li>
+	<li id="menu-item-246" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-246"><a href="https://ssr.tools/194">SSR 多用户教程</a></li>
+	<li id="menu-item-758" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-758"><a href="https://ssr.tools/749">SSR 端口转发</a></li>
+</ul>
+</li>
+<li id="menu-item-115" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-115"><a href="https://ssr.tools/zhoubian"><i class="fa fa-sitemap"></i> 周边 <i class="fa fa-angle-down"></i></a>
+<ul class="sub-menu">
+	<li id="menu-item-250" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-250"><a href="https://ssr.tools/104">美国 Apple ID</a></li>
+	<li id="menu-item-251" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-251"><a href="https://ssr.tools/45">Youtube开启4K</a></li>
+	<li id="menu-item-249" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-249"><a href="https://ssr.tools/150">SwitchyOmega</a></li>
+	<li id="menu-item-340" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-340"><a href="https://ssr.tools/325">ShadowRocket</a></li>
+	<li id="menu-item-341" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-341"><a href="https://ssr.tools/125">iOS Potatso Lite</a></li>
+	<li id="menu-item-436" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-436"><a href="https://ssr.tools/354">安卓APP神器</a></li>
+	<li id="menu-item-710" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-710"><a href="https://ssr.tools/680">一键DD WIN</a></li>
+	<li id="menu-item-709" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-709"><a href="https://ssr.tools/693">一键DD Linux</a></li>
+	<li id="menu-item-708" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-708"><a href="https://ssr.tools/700">GoogleDrive直链</a></li>
+</ul>
+</li>
+							<li class="navto-search"><a href="javascript:;" class="search-show active"><i class="fa fa-search"></i></a></li>
+					</ul>
+						<i class="fa fa-bars m-icon-nav"></i>
+			</div>
+</header>
+<div class="site-search">
+	<div class="container">
+		<form method="get" class="site-search-form" action="https://ssr.tools/"><input class="search-input" name="s" type="text" placeholder="输入关键字" value=""><button class="search-btn" type="submit"><i class="fa fa-search"></i></button></form>	</div>
+</div>	<div class="breadcrumbs">
+		<div class="container">当前位置：<a href="https://ssr.tools/">SSR中文网</a> <small>&gt;</small> <a href="https://ssr.tools/jinjie">进阶教程</a> <small>&gt;</small> 正文</div>
+	</div>
+<section class="container">
+	<div class="content-wrap">
+	<div class="content">
+				<header class="article-header">
+			<h1 class="article-title"><a href="https://ssr.tools/31">SSR一键安装脚本 (ShadowsocksR一键安装教程)</a></h1>
+			<div class="article-meta">
+				<span class="item">2018-07-12</span>
+												<span class="item">分类：<a href="https://ssr.tools/jinjie" rel="category tag">进阶教程</a></span>
+				<span class="item post-views">阅读(56321)</span>				<span class="item">评论(39)</span>
+				<span class="item"></span>
+			</div>
+		</header>
+				<article class="article-content">
+			<div class="asb asb-post asb-post-01"><div style="float:left;width:48%;"><a href="https://ssr.tools/goto/vultr" target="_blank"><img src="./SSR一键安装脚本 (ShadowsocksR一键安装教程)-SSR中文网_files/2019-01-03_141849.png" data-tag="bdshare"></a></div>
+<div style="float:right;width:48%;"><a href="https://ssr.tools/goto/bwg-57" target="_blank"><img src="./SSR一键安装脚本 (ShadowsocksR一键安装教程)-SSR中文网_files/2019-01-09_111322.png" data-tag="bdshare"></a></div>
+<div style="float:left;width:100%;"><a href="https://ssr.tools/208" target="_blank"><img src="./SSR一键安装脚本 (ShadowsocksR一键安装教程)-SSR中文网_files/2019-01-09_113200.png" data-tag="bdshare"></a></div>
+<div style="float:left;width:100%;"><a href="https://ssr.tools/216" target="_blank"><img src="./SSR一键安装脚本 (ShadowsocksR一键安装教程)-SSR中文网_files/2019-01-05_111653.png" data-tag="bdshare"></a></div></div>			<p>&nbsp;</p>
+<p><img class="alignnone size-full wp-image-40" src="./SSR一键安装脚本 (ShadowsocksR一键安装教程)-SSR中文网_files/2018-07-12_162304.png" alt="" width="440" height="300" srcset="https://ssr.tools/wp-content/uploads/2018-07-12_162304.png 440w, https://ssr.tools/wp-content/uploads/2018-07-12_162304-300x205.png 300w, https://ssr.tools/wp-content/uploads/2018-07-12_162304-220x150.png 220w" sizes="(max-width: 440px) 100vw, 440px" data-tag="bdshare"></p>
+<p>&nbsp;</p>
+<p>搭建SSR的第一步，我们需要有一台较为便宜的国外VPS服务器，如果你还没有，可以参考：</p>
+<h3>适合安装Shadowsocks的服务器</h3>
+<p>综合考虑性价比、使用方便程度、连接速度等几个方面，Vultr和搬瓦工是搭建Shadowsocks不错的选择。可以参考分析文章：</p>
+<p><a href="https://ssr.tools/55" target="_blank" rel="noopener">适合搭建SSR的国外VPS服务器推荐汇总</a></p>
+<p><strong>搬瓦工官方网站：</strong></p>
+<p><a href="https://ssr.tools/goto/banwagonhost" target="_blank" rel="noopener"><img class="alignleft wp-image-59 size-full" src="./SSR一键安装脚本 (ShadowsocksR一键安装教程)-SSR中文网_files/Banwagonhost.png" alt="" width="150" height="46" data-tag="bdshare"></a></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><strong>搬瓦工优惠码：</strong></p>
+		<div id="crayon-5cc6958d85d76259194555" class="crayon-syntax crayon-theme-capacitacionti crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-always disable-anim" style="margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important; height: auto;">
+		
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings=" show-plain-default" readonly="" style="tab-size: 4; font-size: 12px !important; line-height: 15px !important; z-index: 1; opacity: 1; height: 86px;">6.25%优惠码：
+BWH26FXH3HIQ
+5.97%优惠码：
+BWH25AQH2CMQ
+5.5%优惠码：
+ireallyreadtheterms8</textarea></div>
+			<div class="crayon-main" style="position: relative; z-index: 0; opacity: 0;">
+				<table class="crayon-table" style="">
+					<tbody><tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-num" data-line="crayon-5cc6958d85d76259194555-1">1</div><div class="crayon-num" data-line="crayon-5cc6958d85d76259194555-2">2</div><div class="crayon-num" data-line="crayon-5cc6958d85d76259194555-3">3</div><div class="crayon-num" data-line="crayon-5cc6958d85d76259194555-4">4</div><div class="crayon-num" data-line="crayon-5cc6958d85d76259194555-5">5</div><div class="crayon-num" data-line="crayon-5cc6958d85d76259194555-6">6</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5cc6958d85d76259194555-1"><span class="crayon-cn">6.25</span><span class="crayon-o">%</span>优惠码：</div><div class="crayon-line" id="crayon-5cc6958d85d76259194555-2"><span class="crayon-i">BWH26FXH3HIQ</span></div><div class="crayon-line" id="crayon-5cc6958d85d76259194555-3"><span class="crayon-cn">5.97</span><span class="crayon-o">%</span>优惠码：</div><div class="crayon-line" id="crayon-5cc6958d85d76259194555-4"><span class="crayon-i">BWH25AQH2CMQ</span></div><div class="crayon-line" id="crayon-5cc6958d85d76259194555-5"><span class="crayon-cn">5.5</span><span class="crayon-o">%</span>优惠码：</div><div class="crayon-line" id="crayon-5cc6958d85d76259194555-6"><span class="crayon-v">ireallyreadtheterms8</span></div></div></td>
+					</tr>
+				</tbody></table>
+			</div>
+		</div><p><strong>搬瓦工教程：</strong></p>
+<p><a href="https://ssr.tools/208" target="_blank" rel="noopener">搬瓦工VPS服务器购买及使用教程</a></p>
+<p>&nbsp;</p>
+<p><strong>Vultr官方网站：</strong></p>
+<p><a href="https://ssr.tools/goto/vultr" target="_blank" rel="noopener"><img class="alignleft wp-image-57 size-full" src="./SSR一键安装脚本 (ShadowsocksR一键安装教程)-SSR中文网_files/Vultr.png" alt="" width="150" height="46" data-tag="bdshare"></a></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><strong>Vultr教程：</strong></p>
+<p><a href="https://ssr.tools/216" target="_blank" rel="noopener">Vultr VPS服务器购买及使用教程</a></p>
+<p>&nbsp;</p>
+<h2>SSR一键安装</h2>
+<p>关于在VPS服务器上安装SSR服务端，网上有众多一键安装脚本供我们选择，所以安装过程比较简单。这里我们以teddysun的一键安装为例，简单介绍下SSR服务器端的安装。</p>
+<p><span style="color: #ff0000;">备用：</span>极少部分用户，如果遇到安装失败或安装后无法正常使用的情况，可以尝试另一个版本：<a href="https://ssr.tools/803" target="_blank" rel="noopener">逗比SSR一键安装脚本</a></p>
+<h3>支持平台</h3>
+<p>本一键安装脚本为服务器端使用，即SSR服务端一键安装。</p>
+<p>服务器系统： CentOS 6 及以上、Debian 7 及以上、Ubuntu 12 及以上</p>
+<p>系统内存支持128M及以上，推荐256M起步。</p>
+<p>&nbsp;</p>
+<h3>安装流程</h3>
+<p>1.在电脑端打开<a href="https://ssr.tools/72" target="_blank" rel="noopener">Putty</a>，连接VPS服务器，以root用户登录。</p>
+<p>2.登录成功后，依次运行以下三条命令：</p>
+		<div id="crayon-5cc6958d85d84032138304" class="crayon-syntax crayon-theme-capacitacionti crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-always disable-anim" style="margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important; height: auto;">
+		
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings=" show-plain-default" readonly="" style="tab-size: 4; font-size: 12px !important; line-height: 15px !important; z-index: 1; opacity: 1; height: 49px;">wget --no-check-certificate -O shadowsocks-all.sh https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks-all.sh
+chmod +x shadowsocks-all.sh
+./shadowsocks-all.sh 2&gt;&amp;1 | tee shadowsocks-all.log</textarea></div>
+			<div class="crayon-main" style="position: relative; z-index: 0; opacity: 0;">
+				<table class="crayon-table" style="">
+					<tbody><tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-num" data-line="crayon-5cc6958d85d84032138304-1">1</div><div class="crayon-num" data-line="crayon-5cc6958d85d84032138304-2">2</div><div class="crayon-num" data-line="crayon-5cc6958d85d84032138304-3">3</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5cc6958d85d84032138304-1"><span class="crayon-v">wget</span><span class="crayon-h"> </span><span class="crayon-o">--</span><span class="crayon-v">no</span><span class="crayon-o">-</span><span class="crayon-v">check</span><span class="crayon-o">-</span><span class="crayon-v">certificate</span><span class="crayon-h"> </span><span class="crayon-o">-</span><span class="crayon-i">O</span><span class="crayon-h"> </span><span class="crayon-v">shadowsocks</span><span class="crayon-o">-</span><span class="crayon-v">all</span><span class="crayon-sy">.</span><span class="crayon-e">sh </span><span class="crayon-v">https</span><span class="crayon-o">:</span><span class="crayon-c">//raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks-all.sh</span></div><div class="crayon-line" id="crayon-5cc6958d85d84032138304-2"><span class="crayon-v">chmod</span><span class="crayon-h"> </span><span class="crayon-o">+</span><span class="crayon-i">x</span><span class="crayon-h"> </span><span class="crayon-v">shadowsocks</span><span class="crayon-o">-</span><span class="crayon-v">all</span><span class="crayon-sy">.</span><span class="crayon-i">sh</span></div><div class="crayon-line" id="crayon-5cc6958d85d84032138304-3"><span class="crayon-sy">.</span><span class="crayon-o">/</span><span class="crayon-v">shadowsocks</span><span class="crayon-o">-</span><span class="crayon-v">all</span><span class="crayon-sy">.</span><span class="crayon-i">sh</span><span class="crayon-h"> </span><span class="crayon-cn">2</span><span class="crayon-o">&gt;</span><span class="crayon-o">&amp;</span><span class="crayon-cn">1</span><span class="crayon-h"> </span><span class="crayon-o">|</span><span class="crayon-h"> </span><span class="crayon-e">tee </span><span class="crayon-v">shadowsocks</span><span class="crayon-o">-</span><span class="crayon-v">all</span><span class="crayon-sy">.</span><span class="crayon-v">log</span></div></div></td>
+					</tr>
+				</tbody></table>
+			</div>
+		</div><p>（小提示：如果运行上面第一条命令时，出现找不到wget之类的提示，则表明系统没有预装wget，先运行以下命令完成wget的安装）</p>
+		<div id="crayon-5cc6958d85d88983243224" class="crayon-syntax crayon-theme-capacitacionti crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-always disable-anim" style="margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important; height: auto;">
+		
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings=" show-plain-default" readonly="" style="tab-size: 4; font-size: 12px !important; line-height: 15px !important; z-index: 1; opacity: 1; height: 58px;">CentOS：
+yum -y install wget
+Ubuntu/Debian：
+apt-get -y install wget</textarea></div>
+			<div class="crayon-main" style="position: relative; z-index: 0; opacity: 0;">
+				<table class="crayon-table" style="">
+					<tbody><tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-num" data-line="crayon-5cc6958d85d88983243224-1">1</div><div class="crayon-num" data-line="crayon-5cc6958d85d88983243224-2">2</div><div class="crayon-num" data-line="crayon-5cc6958d85d88983243224-3">3</div><div class="crayon-num" data-line="crayon-5cc6958d85d88983243224-4">4</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5cc6958d85d88983243224-1"><span class="crayon-i">CentOS</span>：</div><div class="crayon-line" id="crayon-5cc6958d85d88983243224-2"><span class="crayon-v">yum</span><span class="crayon-h"> </span><span class="crayon-o">-</span><span class="crayon-i">y</span><span class="crayon-h"> </span><span class="crayon-e">install </span><span class="crayon-e">wget</span></div><div class="crayon-line" id="crayon-5cc6958d85d88983243224-3"><span class="crayon-v">Ubuntu</span><span class="crayon-o">/</span><span class="crayon-i">Debian</span>：</div><div class="crayon-line" id="crayon-5cc6958d85d88983243224-4"><span class="crayon-v">apt</span><span class="crayon-o">-</span><span class="crayon-v">get</span><span class="crayon-h"> </span><span class="crayon-o">-</span><span class="crayon-i">y</span><span class="crayon-h"> </span><span class="crayon-e">install </span><span class="crayon-v">wget</span></div></div></td>
+					</tr>
+				</tbody></table>
+			</div>
+		</div><p>&nbsp;</p>
+<p>3.接下来会有几个参数需要选择，依次为：</p>
+<ul>
+<li>1.提示选择哪个版本安装，我们输入2后按回车，即选择SSR安装。</li>
+</ul>
+<p><img class="alignnone size-full wp-image-32" src="./SSR一键安装脚本 (ShadowsocksR一键安装教程)-SSR中文网_files/2018-07-12_154217.jpg" alt="" width="464" height="114" srcset="https://ssr.tools/wp-content/uploads/2018-07-12_154217.jpg 464w, https://ssr.tools/wp-content/uploads/2018-07-12_154217-300x74.jpg 300w" sizes="(max-width: 464px) 100vw, 464px" data-tag="bdshare"></p>
+<p>&nbsp;</p>
+<ul>
+<li>2.然后会提示设置SSR密码，输入自定义密码后按回车，建议不要使用默认密码。</li>
+</ul>
+<p><img class="alignnone size-full wp-image-33" src="./SSR一键安装脚本 (ShadowsocksR一键安装教程)-SSR中文网_files/2018-07-12_154332.jpg" alt="" width="391" height="54" srcset="https://ssr.tools/wp-content/uploads/2018-07-12_154332.jpg 391w, https://ssr.tools/wp-content/uploads/2018-07-12_154332-300x41.jpg 300w" sizes="(max-width: 391px) 100vw, 391px" data-tag="bdshare"></p>
+<p>&nbsp;</p>
+<ul>
+<li>3.接下来选择SSR要使用的服务器端口，随便输入一个，也可以默认回车。</li>
+</ul>
+<p><img class="alignnone size-full wp-image-34" src="./SSR一键安装脚本 (ShadowsocksR一键安装教程)-SSR中文网_files/2018-07-12_154422.jpg" alt="" width="408" height="47" srcset="https://ssr.tools/wp-content/uploads/2018-07-12_154422.jpg 408w, https://ssr.tools/wp-content/uploads/2018-07-12_154422-300x35.jpg 300w" sizes="(max-width: 408px) 100vw, 408px" data-tag="bdshare"></p>
+<p>&nbsp;</p>
+<ul>
+<li>4.然后选择加密方式，如果选择chacha20的话，就输入对应序号12，按回车继续。</li>
+</ul>
+<p><img class="alignnone size-full wp-image-35" src="./SSR一键安装脚本 (ShadowsocksR一键安装教程)-SSR中文网_files/2018-07-12_154549.jpg" alt="" width="446" height="290" srcset="https://ssr.tools/wp-content/uploads/2018-07-12_154549.jpg 446w, https://ssr.tools/wp-content/uploads/2018-07-12_154549-300x195.jpg 300w" sizes="(max-width: 446px) 100vw, 446px" data-tag="bdshare"></p>
+<p>&nbsp;</p>
+<ul>
+<li>5.接下来选择协议，建议选择自auth_aes128_md5开始以下的几种，输入对应序号按回车。</li>
+</ul>
+<p><img class="alignnone size-full wp-image-36" src="./SSR一键安装脚本 (ShadowsocksR一键安装教程)-SSR中文网_files/2018-07-12_154640.jpg" alt="" width="420" height="230" srcset="https://ssr.tools/wp-content/uploads/2018-07-12_154640.jpg 420w, https://ssr.tools/wp-content/uploads/2018-07-12_154640-300x164.jpg 300w" sizes="(max-width: 420px) 100vw, 420px" data-tag="bdshare"></p>
+<p>&nbsp;</p>
+<ul>
+<li>6.然后选择混淆方式，如下图所示，选择好后按回车。</li>
+</ul>
+<p><img class="alignnone size-full wp-image-37" src="./SSR一键安装脚本 (ShadowsocksR一键安装教程)-SSR中文网_files/2018-07-12_154714.jpg" alt="" width="392" height="182" srcset="https://ssr.tools/wp-content/uploads/2018-07-12_154714.jpg 392w, https://ssr.tools/wp-content/uploads/2018-07-12_154714-300x139.jpg 300w" sizes="(max-width: 392px) 100vw, 392px" data-tag="bdshare"></p>
+<p>&nbsp;</p>
+<ul>
+<li>7.以上参数选择完成后，按任意键开始安装。</li>
+</ul>
+<p><img class="alignnone size-full wp-image-38" src="./SSR一键安装脚本 (ShadowsocksR一键安装教程)-SSR中文网_files/2018-07-12_154823.jpg" alt="" width="435" height="81" srcset="https://ssr.tools/wp-content/uploads/2018-07-12_154823.jpg 435w, https://ssr.tools/wp-content/uploads/2018-07-12_154823-300x56.jpg 300w" sizes="(max-width: 435px) 100vw, 435px" data-tag="bdshare"></p>
+<p>&nbsp;</p>
+<ul>
+<li>8.安装完成后，会有如下图安装成功的提示，记住刚才设置的各项参数，在客户端连接时需要用到。</li>
+</ul>
+<p><img class="alignnone size-full wp-image-39" src="./SSR一键安装脚本 (ShadowsocksR一键安装教程)-SSR中文网_files/2018-07-12_155328.jpg" alt="" width="644" height="325" srcset="https://ssr.tools/wp-content/uploads/2018-07-12_155328.jpg 644w, https://ssr.tools/wp-content/uploads/2018-07-12_155328-300x151.jpg 300w" sizes="(max-width: 644px) 100vw, 644px" data-tag="bdshare"></p>
+<p>&nbsp;</p>
+<ul>
+<li>9.经过以上几个简单的参数选择后，SSR服务器端已经自动安装成功了。保险起见，输入reboot重启VPS服务器，SSR会自动随系统重启。</li>
+</ul>
+<p>&nbsp;</p>
+<p>SSR服务端安装成功后，就可以在电脑、手机、路由器等设备上的SSR客户端上，按照以上设置的各项参数进行连接了。</p>
+<p><strong>SSR客户端下载及使用可以参考：</strong><a href="https://ssr.tools/175" target="_blank" rel="noopener">SSR各平台客户端下载汇总</a></p>
+<p>&nbsp;</p>
+<h3>SSR常用命令</h3>
+<p>Putty连接至VPS服务器，分别运行如下各命令：</p>
+		<div id="crayon-5cc6958d85d8c954072285" class="crayon-syntax crayon-theme-capacitacionti crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-always disable-anim" style="margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important; height: auto;">
+		
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings=" show-plain-default" readonly="" style="tab-size: 4; font-size: 12px !important; line-height: 15px !important; z-index: 1; opacity: 1; height: 144px;">启动SSR：
+/etc/init.d/shadowsocks-r start
+退出SSR：
+/etc/init.d/shadowsocks-r stop
+重启SSR：
+/etc/init.d/shadowsocks-r restart
+SSR状态：
+/etc/init.d/shadowsocks-r status
+卸载SSR：
+./shadowsocks-all.sh uninstall</textarea></div>
+			<div class="crayon-main" style="position: relative; z-index: 0; opacity: 0;">
+				<table class="crayon-table" style="">
+					<tbody><tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-num" data-line="crayon-5cc6958d85d8c954072285-1">1</div><div class="crayon-num" data-line="crayon-5cc6958d85d8c954072285-2">2</div><div class="crayon-num" data-line="crayon-5cc6958d85d8c954072285-3">3</div><div class="crayon-num" data-line="crayon-5cc6958d85d8c954072285-4">4</div><div class="crayon-num" data-line="crayon-5cc6958d85d8c954072285-5">5</div><div class="crayon-num" data-line="crayon-5cc6958d85d8c954072285-6">6</div><div class="crayon-num" data-line="crayon-5cc6958d85d8c954072285-7">7</div><div class="crayon-num" data-line="crayon-5cc6958d85d8c954072285-8">8</div><div class="crayon-num" data-line="crayon-5cc6958d85d8c954072285-9">9</div><div class="crayon-num" data-line="crayon-5cc6958d85d8c954072285-10">10</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5cc6958d85d8c954072285-1">启动<span class="crayon-i">SSR</span>：</div><div class="crayon-line" id="crayon-5cc6958d85d8c954072285-2"><span class="crayon-o">/</span><span class="crayon-v">etc</span><span class="crayon-o">/</span><span class="crayon-v">init</span><span class="crayon-sy">.</span><span class="crayon-v">d</span><span class="crayon-o">/</span><span class="crayon-v">shadowsocks</span><span class="crayon-o">-</span><span class="crayon-i">r</span><span class="crayon-h"> </span><span class="crayon-i">start</span></div><div class="crayon-line" id="crayon-5cc6958d85d8c954072285-3">退出<span class="crayon-i">SSR</span>：</div><div class="crayon-line" id="crayon-5cc6958d85d8c954072285-4"><span class="crayon-o">/</span><span class="crayon-v">etc</span><span class="crayon-o">/</span><span class="crayon-v">init</span><span class="crayon-sy">.</span><span class="crayon-v">d</span><span class="crayon-o">/</span><span class="crayon-v">shadowsocks</span><span class="crayon-o">-</span><span class="crayon-i">r</span><span class="crayon-h"> </span><span class="crayon-i">stop</span></div><div class="crayon-line" id="crayon-5cc6958d85d8c954072285-5">重启<span class="crayon-i">SSR</span>：</div><div class="crayon-line" id="crayon-5cc6958d85d8c954072285-6"><span class="crayon-o">/</span><span class="crayon-v">etc</span><span class="crayon-o">/</span><span class="crayon-v">init</span><span class="crayon-sy">.</span><span class="crayon-v">d</span><span class="crayon-o">/</span><span class="crayon-v">shadowsocks</span><span class="crayon-o">-</span><span class="crayon-i">r</span><span class="crayon-h"> </span><span class="crayon-e">restart</span></div><div class="crayon-line" id="crayon-5cc6958d85d8c954072285-7"><span class="crayon-i">SSR</span>状态：</div><div class="crayon-line" id="crayon-5cc6958d85d8c954072285-8"><span class="crayon-o">/</span><span class="crayon-v">etc</span><span class="crayon-o">/</span><span class="crayon-v">init</span><span class="crayon-sy">.</span><span class="crayon-v">d</span><span class="crayon-o">/</span><span class="crayon-v">shadowsocks</span><span class="crayon-o">-</span><span class="crayon-i">r</span><span class="crayon-h"> </span><span class="crayon-i">status</span></div><div class="crayon-line" id="crayon-5cc6958d85d8c954072285-9">卸载<span class="crayon-i">SSR</span>：</div><div class="crayon-line" id="crayon-5cc6958d85d8c954072285-10"><span class="crayon-sy">.</span><span class="crayon-o">/</span><span class="crayon-v">shadowsocks</span><span class="crayon-o">-</span><span class="crayon-v">all</span><span class="crayon-sy">.</span><span class="crayon-e">sh </span><span class="crayon-v">uninstall</span></div></div></td>
+					</tr>
+				</tbody></table>
+			</div>
+		</div><p>&nbsp;</p>
+<p>另外如果需要更改SSR的相关配置参数，配置文件位置在：/etc/shadowsocks-r/config.json</p>
+<p>&nbsp;</p>
+		</article>
+				<div class="asb-post-footer"><b>AD：</b><strong>【便宜啦】</strong><a target="_blank" href="https://ssr.tools/208">搬瓦工2019最新优惠码点我查看,全网额度最大!</a></div>				            <div class="post-actions">
+            	<a href="javascript:;" class="post-like action action-like" data-pid="31"><i class="fa fa-thumbs-o-up"></i>赞(<span>24</span>)</a>            	            	            </div>
+        		<div class="post-copyright">未经允许不得转载：<a href="https://ssr.tools/">SSR中文网</a> » <a href="https://ssr.tools/31">SSR一键安装脚本 (ShadowsocksR一键安装教程)</a></div>		
+					<div class="action-share"></div>
+		
+		<div class="article-tags">标签：<a href="https://ssr.tools/tag/shadowsocksr" rel="tag">Shadowsocksr</a><a href="https://ssr.tools/tag/ssr" rel="tag">SSR</a><a href="https://ssr.tools/tag/ssr%e4%b8%80%e9%94%ae%e5%ae%89%e8%a3%85%e6%95%99%e7%a8%8b" rel="tag">SSR一键安装教程</a><a href="https://ssr.tools/tag/ssr%e5%ae%89%e8%a3%85%e6%95%99%e7%a8%8b" rel="tag">SSR安装教程</a><a href="https://ssr.tools/tag/ssr%e6%95%99%e7%a8%8b" rel="tag">SSR教程</a></div>
+		
+		
+		            <nav class="article-nav">
+                <span class="article-nav-prev">上一篇<br><a href="https://ssr.tools/25" rel="prev">个人搭建SSR需要哪些条件？其实很简单！</a></span>
+                <span class="article-nav-next">下一篇<br><a href="https://ssr.tools/45" rel="next">Youtube观看4K视频时 最高只能设置1080P或720P解决办法</a></span>
+            </nav>
+        
+		<div class="asb asb-post asb-post-02"><a href="https://ssr.tools/55" target="_blank"><img src="./SSR一键安装脚本 (ShadowsocksR一键安装教程)-SSR中文网_files/2018-10-22_112843.png"></a></div>		<div class="relates relates-thumb"><div class="title"><h3>相关文章</h3></div><ul><li><a href="https://ssr.tools/1102"><img data-src="https://ssr.tools/wp-content/uploads/2019-03-09_154230-220x150.png" alt="SSR Windows客户端 多服务器切换无效的解决办法-SSR中文网" src="./SSR一键安装脚本 (ShadowsocksR一键安装教程)-SSR中文网_files/2019-03-09_154230-220x150.png" class="thumb" style="display: block;"></a><a href="https://ssr.tools/1102">SSR Windows客户端 多服务器切换无效的解决办法</a></li><li><a href="https://ssr.tools/258"><img data-src="https://ssr.tools/wp-content/uploads/2018-07-25_181201-220x150.png" alt="ShadowsocksR如何限制用户连接数量及速度-SSR中文网" src="./SSR一键安装脚本 (ShadowsocksR一键安装教程)-SSR中文网_files/2018-07-25_181201-220x150.png" class="thumb" style="display: block;"></a><a href="https://ssr.tools/258">ShadowsocksR如何限制用户连接数量及速度</a></li><li><a href="https://ssr.tools/252"><img data-src="https://ssr.tools/wp-content/uploads/2018-07-24_173001-220x150.png" alt="搭建ShadowsocksR完整流程，看完你也会！SSR-SSR中文网" src="./SSR一键安装脚本 (ShadowsocksR一键安装教程)-SSR中文网_files/2018-07-24_173001-220x150.png" class="thumb" style="display: block;"></a><a href="https://ssr.tools/252">搭建ShadowsocksR完整流程，看完你也会！SSR</a></li><li><a href="https://ssr.tools/194"><img data-src="https://ssr.tools/wp-content/uploads/2018-07-21_213151-220x150.png" alt="SSR 添加多用户多端口教程（ShadowsocksR多用户）-SSR中文网" src="./SSR一键安装脚本 (ShadowsocksR一键安装教程)-SSR中文网_files/2018-07-21_213151-220x150.png" class="thumb" style="display: block;"></a><a href="https://ssr.tools/194">SSR 添加多用户多端口教程（ShadowsocksR多用户）</a></li><li><a href="https://ssr.tools/175"><img data-src="https://ssr.tools/wp-content/uploads/2018-07-21_143948-220x150.png" alt="SSR各平台客户端下载汇总-SSR中文网" src="./SSR一键安装脚本 (ShadowsocksR一键安装教程)-SSR中文网_files/2018-07-21_143948-220x150.png" class="thumb" style="display: block;"></a><a href="https://ssr.tools/175">SSR各平台客户端下载汇总</a></li><li><a href="https://ssr.tools/164"><img data-src="https://ssr.tools/wp-content/uploads/2018-07-21_133237-220x150.png" alt="SSR MAC客户端ShadowsocksX-NG-R下载、安装及使用教程-SSR中文网" src="./SSR一键安装脚本 (ShadowsocksR一键安装教程)-SSR中文网_files/2018-07-21_133237-220x150.png" class="thumb" style="display: block;"></a><a href="https://ssr.tools/164">SSR MAC客户端ShadowsocksX-NG-R下载、安装及使用教程</a></li><li><a href="https://ssr.tools/136"><img data-src="https://ssr.tools/wp-content/uploads/2018-07-19_163137-220x150.png" alt="SSR 路由器客户端下载、安装及使用教程（openwrt ShadowsocksR）-SSR中文网" src="./SSR一键安装脚本 (ShadowsocksR一键安装教程)-SSR中文网_files/2018-07-19_163137-220x150.png" class="thumb" style="display: block;"></a><a href="https://ssr.tools/136">SSR 路由器客户端下载、安装及使用教程（openwrt ShadowsocksR）</a></li><li><a href="https://ssr.tools/125"><img data-src="https://ssr.tools/wp-content/uploads/2018-07-19_114839-220x150.png" alt="IOS 免费SSR客户端 Potatso Lite下载及使用教程（iphone/ipad可用）-SSR中文网" src="./SSR一键安装脚本 (ShadowsocksR一键安装教程)-SSR中文网_files/2018-07-19_114839-220x150.png" class="thumb" style="display: block;"></a><a href="https://ssr.tools/125">IOS 免费SSR客户端 Potatso Lite下载及使用教程（iphone/ipad可用）</a></li></ul></div>		<div class="asb asb-post asb-post-03"><div style="float:right;width:100%;margin-bottom:8px"><a href="https://ssr.tools/goto/vultr" target="_blank"><img src="./SSR一键安装脚本 (ShadowsocksR一键安装教程)-SSR中文网_files/2018-10-19_140208.png"></a></div></div>		<div class="title" id="comments">
+	<h3>评论 <b>39</b></h3>
+</div>
+<div id="respond" class="no_webshot">
+		
+	<form action="https://ssr.tools/wp-comments-post.php" method="post" id="commentform">
+		<div class="comt">
+			<div class="comt-title">
+				<img data-src="https://secure.gravatar.com/avatar/?s=100&amp;d=mm" class="avatar avatar-100" height="50" width="50" src="./SSR一键安装脚本 (ShadowsocksR一键安装教程)-SSR中文网_files/none.png" style="display: inline;">				<p><a id="cancel-comment-reply-link" href="javascript:;">取消</a></p>
+			</div>
+			<div class="comt-box">
+				<textarea placeholder="你的评论可以一针见血" class="input-block-level comt-area" name="comment" id="comment" cols="100%" rows="3" tabindex="1" onkeydown="if(event.ctrlKey&amp;&amp;event.keyCode==13){document.getElementById(&#39;submit&#39;).click();return false};"></textarea>
+				<div class="comt-ctrl">
+					<div class="comt-tips"><input type="hidden" name="comment_post_ID" value="31" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+<label for="comment_mail_notify" class="checkbox inline hide" style="padding-top:0"><input type="checkbox" name="comment_mail_notify" id="comment_mail_notify" value="comment_mail_notify" checked="checked">有人回复时邮件通知我</label><div class="comt-tip comt-loading" style="display: none;">评论提交中...</div><div class="comt-tip comt-error" style="display: none;">#</div></div>
+					<button type="submit" name="submit" id="submit" tabindex="5">提交评论</button>
+					<!-- <span data-type="comment-insert-smilie" class="muted comt-smilie"><i class="icon-thumbs-up icon12"></i> 表情</span> -->
+				</div>
+			</div>
+
+												<div class="comt-comterinfo" id="comment-author-info">
+						<ul>
+							<li class="form-inline"><label class="hide" for="author">昵称</label><input class="ipt" type="text" name="author" id="author" value="" tabindex="2" placeholder="昵称"><span class="text-muted">昵称 (必填)</span></li>
+							<li class="form-inline"><label class="hide" for="email">邮箱</label><input class="ipt" type="text" name="email" id="email" value="" tabindex="3" placeholder="邮箱"><span class="text-muted">邮箱 (必填)</span></li>
+							<li class="form-inline"><label class="hide" for="url">网址</label><input class="ipt" type="text" name="url" id="url" value="" tabindex="4" placeholder="网址"><span class="text-muted">网址</span></li>
+						</ul>
+					</div>
+									</div>
+
+	</form>
+	</div>
+<div id="postcomments">
+	<ol class="commentlist">
+		<li class="comment even thread-even depth-1" id="comment-11"><span class="comt-f">#1</span><div class="comt-avatar"><img data-src="https://secure.gravatar.com/avatar/60bd4d84c568b263bf1610722312cdbf?s=100&amp;d=mm" class="avatar avatar-100" height="50" width="50" src="./SSR一键安装脚本 (ShadowsocksR一键安装教程)-SSR中文网_files/avatar-default.png"></div><div class="comt-main" id="div-comment-11"><p>输入后面两条代码没反应</p>
+<div class="comt-meta"><span class="comt-author">geass</span>7个月前 (10-08)<a rel="nofollow" class="comment-reply-link" href="javascript:;" onclick="return addComment.moveForm( &quot;div-comment-11&quot;, &quot;11&quot;, &quot;respond&quot;, &quot;31&quot; )" aria-label="回复给geass">回复</a></div></div><ul class="children">
+<li class="comment byuser comment-author-asuan bypostauthor odd alt depth-2" id="comment-12"><div class="comt-avatar"><img data-src="https://secure.gravatar.com/avatar/dddb228816732e0ce5a5cea5f1e9108e?s=100&amp;d=mm" class="avatar avatar-100" height="50" width="50" src="./SSR一键安装脚本 (ShadowsocksR一键安装教程)-SSR中文网_files/avatar-default.png"></div><div class="comt-main" id="div-comment-12"><p>第二条输入运行时本来就没有反应，第三条如果没反应的话，看下是不是没复制完全，或者哪一步有疏漏。</p>
+<div class="comt-meta"><span class="comt-author">阿酸</span>7个月前 (10-08)<a rel="nofollow" class="comment-reply-link" href="javascript:;" onclick="return addComment.moveForm( &quot;div-comment-12&quot;, &quot;12&quot;, &quot;respond&quot;, &quot;31&quot; )" aria-label="回复给阿酸">回复</a></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-13"><span class="comt-f">#2</span><div class="comt-avatar"><img data-src="https://secure.gravatar.com/avatar/3d648a7cb00c14675602ff4780157a6e?s=100&amp;d=mm" class="avatar avatar-100" height="50" width="50" src="./SSR一键安装脚本 (ShadowsocksR一键安装教程)-SSR中文网_files/avatar-default.png"></div><div class="comt-main" id="div-comment-13"><p>最后安装提示有个文件安装错误怎么办</p>
+<div class="comt-meta"><span class="comt-author">wtts</span>7个月前 (10-14)<a rel="nofollow" class="comment-reply-link" href="javascript:;" onclick="return addComment.moveForm( &quot;div-comment-13&quot;, &quot;13&quot;, &quot;respond&quot;, &quot;31&quot; )" aria-label="回复给wtts">回复</a></div></div><ul class="children">
+<li class="comment byuser comment-author-asuan bypostauthor odd alt depth-2" id="comment-14"><div class="comt-avatar"><img data-src="https://secure.gravatar.com/avatar/dddb228816732e0ce5a5cea5f1e9108e?s=100&amp;d=mm" class="avatar avatar-100" height="50" width="50" src="./SSR一键安装脚本 (ShadowsocksR一键安装教程)-SSR中文网_files/avatar-default.png"></div><div class="comt-main" id="div-comment-14"><p>试试在纯净的系统上安装</p>
+<div class="comt-meta"><span class="comt-author">阿酸</span>7个月前 (10-15)<a rel="nofollow" class="comment-reply-link" href="javascript:;" onclick="return addComment.moveForm( &quot;div-comment-14&quot;, &quot;14&quot;, &quot;respond&quot;, &quot;31&quot; )" aria-label="回复给阿酸">回复</a></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-19"><span class="comt-f">#3</span><div class="comt-avatar"><img data-src="https://secure.gravatar.com/avatar/cdf211fcf68ed0661abe4c4654a901d9?s=100&amp;d=mm" class="avatar avatar-100" height="50" width="50" src="./SSR一键安装脚本 (ShadowsocksR一键安装教程)-SSR中文网_files/avatar-default.png"></div><div class="comt-main" id="div-comment-19"><p>ssr中文网站，似乎没有排错板块？现在我把服务都搭建好了，配置好参数后，客户端可以连接上去，连接成功，但是没有网络（互联网连不上），不知道为啥，安装部署基本没报错。</p>
+<div class="comt-meta"><span class="comt-author"><a href="http://%3F%3F/" rel="external nofollow" class="url" target="_blank">jaky911</a></span>6个月前 (10-25)<a rel="nofollow" class="comment-reply-link" href="javascript:;" onclick="return addComment.moveForm( &quot;div-comment-19&quot;, &quot;19&quot;, &quot;respond&quot;, &quot;31&quot; )" aria-label="回复给jaky911">回复</a></div></div><ul class="children">
+<li class="comment byuser comment-author-asuan bypostauthor odd alt depth-2" id="comment-20"><div class="comt-avatar"><img data-src="https://secure.gravatar.com/avatar/dddb228816732e0ce5a5cea5f1e9108e?s=100&amp;d=mm" class="avatar avatar-100" height="50" width="50" src="./SSR一键安装脚本 (ShadowsocksR一键安装教程)-SSR中文网_files/avatar-default.png"></div><div class="comt-main" id="div-comment-20"><p>看下客户端参数是不是完全正确，是不是真的连上了。</p>
+<div class="comt-meta"><span class="comt-author">阿酸</span>6个月前 (10-25)<a rel="nofollow" class="comment-reply-link" href="javascript:;" onclick="return addComment.moveForm( &quot;div-comment-20&quot;, &quot;20&quot;, &quot;respond&quot;, &quot;31&quot; )" aria-label="回复给阿酸">回复</a></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-39"><span class="comt-f">#4</span><div class="comt-avatar"><img data-src="https://secure.gravatar.com/avatar/49f97084952934aa9728820b46f41cd1?s=100&amp;d=mm" class="avatar avatar-100" height="50" width="50" src="./SSR一键安装脚本 (ShadowsocksR一键安装教程)-SSR中文网_files/avatar-default.png"></div><div class="comt-main" id="div-comment-39"><p>按步骤安装全部正常，但SSR客户端连接了完全不能上网，手机和电脑都不行，参数检查了N次都没错！<br>
+求救啊！</p>
+<div class="comt-meta"><span class="comt-author">Tokarev</span>5个月前 (12-09)<a rel="nofollow" class="comment-reply-link" href="javascript:;" onclick="return addComment.moveForm( &quot;div-comment-39&quot;, &quot;39&quot;, &quot;respond&quot;, &quot;31&quot; )" aria-label="回复给Tokarev">回复</a></div></div><ul class="children">
+<li class="comment byuser comment-author-asuan bypostauthor odd alt depth-2" id="comment-40"><div class="comt-avatar"><img data-src="https://secure.gravatar.com/avatar/dddb228816732e0ce5a5cea5f1e9108e?s=100&amp;d=mm" class="avatar avatar-100" height="50" width="50" src="./SSR一键安装脚本 (ShadowsocksR一键安装教程)-SSR中文网_files/avatar-default.png"></div><div class="comt-main" id="div-comment-40"><p>确认下SSR用的端口是不是开放的</p>
+<div class="comt-meta"><span class="comt-author">阿酸</span>5个月前 (12-09)<a rel="nofollow" class="comment-reply-link" href="javascript:;" onclick="return addComment.moveForm( &quot;div-comment-40&quot;, &quot;40&quot;, &quot;respond&quot;, &quot;31&quot; )" aria-label="回复给阿酸">回复</a></div></div><ul class="children">
+<li class="comment even depth-3" id="comment-322"><div class="comt-avatar"><img data-src="https://secure.gravatar.com/avatar/c954c9c5b5e6ffb7098a8d4480dee3a5?s=100&amp;d=mm" class="avatar avatar-100" height="50" width="50" src="./SSR一键安装脚本 (ShadowsocksR一键安装教程)-SSR中文网_files/avatar-default.png"></div><div class="comt-main" id="div-comment-322"><p>怎么查</p>
+<div class="comt-meta"><span class="comt-author">yxsdkj</span>4周前 (04-02)<a rel="nofollow" class="comment-reply-link" href="javascript:;" onclick="return addComment.moveForm( &quot;div-comment-322&quot;, &quot;322&quot;, &quot;respond&quot;, &quot;31&quot; )" aria-label="回复给yxsdkj">回复</a></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-59"><span class="comt-f">#5</span><div class="comt-avatar"><img data-src="https://secure.gravatar.com/avatar/fa37387169ea0b9d244ce0742cb72452?s=100&amp;d=mm" class="avatar avatar-100" height="50" width="50" src="./SSR一键安装脚本 (ShadowsocksR一键安装教程)-SSR中文网_files/avatar-default.png"></div><div class="comt-main" id="div-comment-59"><p>在IOS系统下的Shadowrocket软件，延迟检测超时，上不了怎么办？</p>
+<div class="comt-meta"><span class="comt-author">James</span>4个月前 (12-26)<a rel="nofollow" class="comment-reply-link" href="javascript:;" onclick="return addComment.moveForm( &quot;div-comment-59&quot;, &quot;59&quot;, &quot;respond&quot;, &quot;31&quot; )" aria-label="回复给James">回复</a></div></div><ul class="children">
+<li class="comment byuser comment-author-asuan bypostauthor even depth-2" id="comment-61"><div class="comt-avatar"><img data-src="https://secure.gravatar.com/avatar/dddb228816732e0ce5a5cea5f1e9108e?s=100&amp;d=mm" class="avatar avatar-100" height="50" width="50" src="./SSR一键安装脚本 (ShadowsocksR一键安装教程)-SSR中文网_files/avatar-default.png"></div><div class="comt-main" id="div-comment-61"><p>较大的服务器商家，后台自带防火墙，先排除SSR所用端口是开放的。<br>
+再就是确认服务端和客户端连接参数一致。</p>
+<div class="comt-meta"><span class="comt-author">阿酸</span>4个月前 (12-26)<a rel="nofollow" class="comment-reply-link" href="javascript:;" onclick="return addComment.moveForm( &quot;div-comment-61&quot;, &quot;61&quot;, &quot;respond&quot;, &quot;31&quot; )" aria-label="回复给阿酸">回复</a></div></div><ul class="children">
+<li class="comment odd alt depth-3" id="comment-71"><div class="comt-avatar"><img data-src="https://secure.gravatar.com/avatar/fa37387169ea0b9d244ce0742cb72452?s=100&amp;d=mm" class="avatar avatar-100" height="50" width="50" src="./SSR一键安装脚本 (ShadowsocksR一键安装教程)-SSR中文网_files/avatar-default.png"></div><div class="comt-main" id="div-comment-71"><p>怎么看端口是否开放？我应该把防火墙都关了，还有连接参数是直接复制SSR链接的，应该不会有错</p>
+<div class="comt-meta"><span class="comt-author">James</span>4个月前 (12-28)<a rel="nofollow" class="comment-reply-link" href="javascript:;" onclick="return addComment.moveForm( &quot;div-comment-71&quot;, &quot;71&quot;, &quot;respond&quot;, &quot;31&quot; )" aria-label="回复给James">回复</a></div></div><ul class="children">
+<li class="comment byuser comment-author-asuan bypostauthor even depth-4" id="comment-72"><div class="comt-avatar"><img data-src="https://secure.gravatar.com/avatar/dddb228816732e0ce5a5cea5f1e9108e?s=100&amp;d=mm" class="avatar avatar-100" height="50" width="50" src="./SSR一键安装脚本 (ShadowsocksR一键安装教程)-SSR中文网_files/avatar-default.png"></div><div class="comt-main" id="div-comment-72"><p>测试下服务器是不是被墙了：<a href="https://ssr.tools/772" rel="noopener" target="_blank">https://ssr.tools/772</a><br>
+一切正常的话，尝试在纯净系统下重新安装SSR服务端。</p>
+<div class="comt-meta"><span class="comt-author">阿酸</span>4个月前 (12-28)<a rel="nofollow" class="comment-reply-link" href="javascript:;" onclick="return addComment.moveForm( &quot;div-comment-72&quot;, &quot;72&quot;, &quot;respond&quot;, &quot;31&quot; )" aria-label="回复给阿酸">回复</a></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-157"><span class="comt-f">#6</span><div class="comt-avatar"><img data-src="https://secure.gravatar.com/avatar/26cf67f5ca544592316a5cdabaf7378b?s=100&amp;d=mm" class="avatar avatar-100" height="50" width="50" src="./SSR一键安装脚本 (ShadowsocksR一键安装教程)-SSR中文网_files/avatar-default.png"></div><div class="comt-main" id="div-comment-157"><p>安装步骤来，不能上网。端口也没问题</p>
+<div class="comt-meta"><span class="comt-author">foam</span>3个月前 (02-12)<a rel="nofollow" class="comment-reply-link" href="javascript:;" onclick="return addComment.moveForm( &quot;div-comment-157&quot;, &quot;157&quot;, &quot;respond&quot;, &quot;31&quot; )" aria-label="回复给foam">回复</a></div></div><ul class="children">
+<li class="comment byuser comment-author-asuan bypostauthor even depth-2" id="comment-167"><div class="comt-avatar"><img data-src="https://secure.gravatar.com/avatar/dddb228816732e0ce5a5cea5f1e9108e?s=100&amp;d=mm" class="avatar avatar-100" height="50" width="50" src="./SSR一键安装脚本 (ShadowsocksR一键安装教程)-SSR中文网_files/avatar-default.png"></div><div class="comt-main" id="div-comment-167"><p>可以尝试<a href="https://ssr.tools/803" rel="noopener" target="_blank">逗比版SSR一键脚本</a></p>
+<div class="comt-meta"><span class="comt-author">阿酸</span>2个月前 (02-14)<a rel="nofollow" class="comment-reply-link" href="javascript:;" onclick="return addComment.moveForm( &quot;div-comment-167&quot;, &quot;167&quot;, &quot;respond&quot;, &quot;31&quot; )" aria-label="回复给阿酸">回复</a></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-198"><span class="comt-f">#7</span><div class="comt-avatar"><img data-src="https://secure.gravatar.com/avatar/7bfe8b5bd6328af73257f6c9b553d9a5?s=100&amp;d=mm" class="avatar avatar-100" height="50" width="50" src="./SSR一键安装脚本 (ShadowsocksR一键安装教程)-SSR中文网_files/avatar-default.png"></div><div class="comt-main" id="div-comment-198"><p>怎么突然用不了了 端口可以ping通啊</p>
+<div class="comt-meta"><span class="comt-author">按这样</span>2个月前 (02-25)<a rel="nofollow" class="comment-reply-link" href="javascript:;" onclick="return addComment.moveForm( &quot;div-comment-198&quot;, &quot;198&quot;, &quot;respond&quot;, &quot;31&quot; )" aria-label="回复给按这样">回复</a></div></div><ul class="children">
+<li class="comment byuser comment-author-asuan bypostauthor even depth-2" id="comment-199"><div class="comt-avatar"><img data-src="https://secure.gravatar.com/avatar/dddb228816732e0ce5a5cea5f1e9108e?s=100&amp;d=mm" class="avatar avatar-100" height="50" width="50" src="./SSR一键安装脚本 (ShadowsocksR一键安装教程)-SSR中文网_files/avatar-default.png"></div><div class="comt-main" id="div-comment-199"><p>SSR换个端口试试</p>
+<div class="comt-meta"><span class="comt-author">阿酸</span>2个月前 (02-25)<a rel="nofollow" class="comment-reply-link" href="javascript:;" onclick="return addComment.moveForm( &quot;div-comment-199&quot;, &quot;199&quot;, &quot;respond&quot;, &quot;31&quot; )" aria-label="回复给阿酸">回复</a></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-221"><span class="comt-f">#8</span><div class="comt-avatar"><img data-src="https://secure.gravatar.com/avatar/19b1ac826d53e3eb0d71d638de653477?s=100&amp;d=mm" class="avatar avatar-100" height="50" width="50" src="./SSR一键安装脚本 (ShadowsocksR一键安装教程)-SSR中文网_files/avatar-default.png"></div><div class="comt-main" id="div-comment-221"><p>不能复制啥情况</p>
+<div class="comt-meta"><span class="comt-author">宵夜</span>2个月前 (03-05)<a rel="nofollow" class="comment-reply-link" href="javascript:;" onclick="return addComment.moveForm( &quot;div-comment-221&quot;, &quot;221&quot;, &quot;respond&quot;, &quot;31&quot; )" aria-label="回复给宵夜">回复</a></div></div><ul class="children">
+<li class="comment byuser comment-author-asuan bypostauthor even depth-2" id="comment-222"><div class="comt-avatar"><img data-src="https://secure.gravatar.com/avatar/dddb228816732e0ce5a5cea5f1e9108e?s=100&amp;d=mm" class="avatar avatar-100" height="50" width="50" src="./SSR一键安装脚本 (ShadowsocksR一键安装教程)-SSR中文网_files/avatar-default.png"></div><div class="comt-main" id="div-comment-222"><p>脚本代码都可以鼠标复制的。</p>
+<div class="comt-meta"><span class="comt-author">阿酸</span>2个月前 (03-05)<a rel="nofollow" class="comment-reply-link" href="javascript:;" onclick="return addComment.moveForm( &quot;div-comment-222&quot;, &quot;222&quot;, &quot;respond&quot;, &quot;31&quot; )" aria-label="回复给阿酸">回复</a></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-232"><span class="comt-f">#9</span><div class="comt-avatar"><img data-src="https://secure.gravatar.com/avatar/3d951ff6dc6426491a6ebfa0e45f5884?s=100&amp;d=mm" class="avatar avatar-100" height="50" width="50" src="./SSR一键安装脚本 (ShadowsocksR一键安装教程)-SSR中文网_files/avatar-default.png"></div><div class="comt-main" id="div-comment-232"><p>苹果设备是不是不行呀，安卓和window都可以？</p>
+<div class="comt-meta"><span class="comt-author">andy</span>2个月前 (03-07)<a rel="nofollow" class="comment-reply-link" href="javascript:;" onclick="return addComment.moveForm( &quot;div-comment-232&quot;, &quot;232&quot;, &quot;respond&quot;, &quot;31&quot; )" aria-label="回复给andy">回复</a></div></div><ul class="children">
+<li class="comment byuser comment-author-asuan bypostauthor even depth-2" id="comment-236"><div class="comt-avatar"><img data-src="https://secure.gravatar.com/avatar/dddb228816732e0ce5a5cea5f1e9108e?s=100&amp;d=mm" class="avatar avatar-100" height="50" width="50" src="./SSR一键安装脚本 (ShadowsocksR一键安装教程)-SSR中文网_files/avatar-default.png"></div><div class="comt-main" id="div-comment-236"><p>其它可以证明服务器设置没问题，换个客户端再试试。</p>
+<div class="comt-meta"><span class="comt-author">阿酸</span>2个月前 (03-07)<a rel="nofollow" class="comment-reply-link" href="javascript:;" onclick="return addComment.moveForm( &quot;div-comment-236&quot;, &quot;236&quot;, &quot;respond&quot;, &quot;31&quot; )" aria-label="回复给阿酸">回复</a></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-237"><span class="comt-f">#10</span><div class="comt-avatar"><img data-src="https://secure.gravatar.com/avatar/bf5f7881c4161bea55c2c04eb06ff245?s=100&amp;d=mm" class="avatar avatar-100" height="50" width="50" src="./SSR一键安装脚本 (ShadowsocksR一键安装教程)-SSR中文网_files/avatar-default.png"></div><div class="comt-main" id="div-comment-237"><p>有个严重的问题怎么解决，一台电脑上多个节点，发现好像切换会失灵，比如从us节点切到了eu节点，实际还是停留在us节点，更多节点的时候甚至会乱给你选节点，请问怎么解决这个问题呢？</p>
+<div class="comt-meta"><span class="comt-author">jack</span>2个月前 (03-08)<a rel="nofollow" class="comment-reply-link" href="javascript:;" onclick="return addComment.moveForm( &quot;div-comment-237&quot;, &quot;237&quot;, &quot;respond&quot;, &quot;31&quot; )" aria-label="回复给jack">回复</a></div></div><ul class="children">
+<li class="comment byuser comment-author-asuan bypostauthor even depth-2" id="comment-238"><div class="comt-avatar"><img data-src="https://secure.gravatar.com/avatar/dddb228816732e0ce5a5cea5f1e9108e?s=100&amp;d=mm" class="avatar avatar-100" height="50" width="50" src="./SSR一键安装脚本 (ShadowsocksR一键安装教程)-SSR中文网_files/avatar-default.png"></div><div class="comt-main" id="div-comment-238"><p>SSR Winddows客户端切换不是马上生效，需要再点断开所有连接，然后就会连接选择的节点了<br>
+另外负载均衡功能建议不要开启</p>
+<div class="comt-meta"><span class="comt-author">阿酸</span>2个月前 (03-08)<a rel="nofollow" class="comment-reply-link" href="javascript:;" onclick="return addComment.moveForm( &quot;div-comment-238&quot;, &quot;238&quot;, &quot;respond&quot;, &quot;31&quot; )" aria-label="回复给阿酸">回复</a></div></div><ul class="children">
+<li class="comment odd alt depth-3" id="comment-246"><div class="comt-avatar"><img data-src="https://secure.gravatar.com/avatar/bf5f7881c4161bea55c2c04eb06ff245?s=100&amp;d=mm" class="avatar avatar-100" height="50" width="50" src="./SSR一键安装脚本 (ShadowsocksR一键安装教程)-SSR中文网_files/avatar-default.png"></div><div class="comt-main" id="div-comment-246"><p>感谢，原来如此！！</p>
+<div class="comt-meta"><span class="comt-author">jack</span>2个月前 (03-09)<a rel="nofollow" class="comment-reply-link" href="javascript:;" onclick="return addComment.moveForm( &quot;div-comment-246&quot;, &quot;246&quot;, &quot;respond&quot;, &quot;31&quot; )" aria-label="回复给jack">回复</a></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-257"><span class="comt-f">#11</span><div class="comt-avatar"><img data-src="https://secure.gravatar.com/avatar/4b0795b87b67a375058869463a7fc3d8?s=100&amp;d=mm" class="avatar avatar-100" height="50" width="50" src="./SSR一键安装脚本 (ShadowsocksR一键安装教程)-SSR中文网_files/avatar-default.png"></div><div class="comt-main" id="div-comment-257"><p>输入<br>
+./shadowsocks-all.sh 2&gt;&amp;1 | tee shadowsocks-all.log<br>
+这个命令 会出现<br>
+./shadowsocks-all.sh 行1： –2019-03-13：未找到命令<br>
+./shadowsocks-all.sh 行2： 未预期的符号‘（’附近有语法错误)<br>
+./shadowsocks-all.sh 行2： 正在解析主机 …………………………………..<br>
+咋整？大师</p>
+<p>CentOS：<br>
+yum -y install wget<br>
+Ubuntu/Debian：<br>
+apt-get -y install wget</p>
+<div class="comt-meta"><span class="comt-author">xh</span>2个月前 (03-13)<a rel="nofollow" class="comment-reply-link" href="javascript:;" onclick="return addComment.moveForm( &quot;div-comment-257&quot;, &quot;257&quot;, &quot;respond&quot;, &quot;31&quot; )" aria-label="回复给xh">回复</a></div></div><ul class="children">
+<li class="comment byuser comment-author-asuan bypostauthor odd alt depth-2" id="comment-261"><div class="comt-avatar"><img data-src="https://secure.gravatar.com/avatar/dddb228816732e0ce5a5cea5f1e9108e?s=100&amp;d=mm" class="avatar avatar-100" height="50" width="50" src="./SSR一键安装脚本 (ShadowsocksR一键安装教程)-SSR中文网_files/avatar-default.png"></div><div class="comt-main" id="div-comment-261"><p>是不是系统不符合要求</p>
+<div class="comt-meta"><span class="comt-author">阿酸</span>2个月前 (03-13)<a rel="nofollow" class="comment-reply-link" href="javascript:;" onclick="return addComment.moveForm( &quot;div-comment-261&quot;, &quot;261&quot;, &quot;respond&quot;, &quot;31&quot; )" aria-label="回复给阿酸">回复</a></div></div><ul class="children">
+<li class="comment even depth-3" id="comment-262"><div class="comt-avatar"><img data-src="https://secure.gravatar.com/avatar/4b0795b87b67a375058869463a7fc3d8?s=100&amp;d=mm" class="avatar avatar-100" height="50" width="50" src="./SSR一键安装脚本 (ShadowsocksR一键安装教程)-SSR中文网_files/avatar-default.png"></div><div class="comt-main" id="div-comment-262"><p>哪点不符合？是硬件 还是软件 ？ 我是在本机的Linux上装的， 不是远程VPS服务器装的</p>
+<div class="comt-meta"><span class="comt-author">xh</span>2个月前 (03-13)<a rel="nofollow" class="comment-reply-link" href="javascript:;" onclick="return addComment.moveForm( &quot;div-comment-262&quot;, &quot;262&quot;, &quot;respond&quot;, &quot;31&quot; )" aria-label="回复给xh">回复</a></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-270"><span class="comt-f">#12</span><div class="comt-avatar"><img data-src="https://secure.gravatar.com/avatar/adb3294d082d32e7251832dad3ce5794?s=100&amp;d=mm" class="avatar avatar-100" height="50" width="50" src="./SSR一键安装脚本 (ShadowsocksR一键安装教程)-SSR中文网_files/avatar-default.png"></div><div class="comt-main" id="div-comment-270"><p>请问SSR可以安装KCPTUN加速插件吗？还是说目前只支持SS</p>
+<div class="comt-meta"><span class="comt-author">流长雨</span>2个月前 (03-14)<a rel="nofollow" class="comment-reply-link" href="javascript:;" onclick="return addComment.moveForm( &quot;div-comment-270&quot;, &quot;270&quot;, &quot;respond&quot;, &quot;31&quot; )" aria-label="回复给流长雨">回复</a></div></div><ul class="children">
+<li class="comment even depth-2" id="comment-271"><div class="comt-avatar"><img data-src="https://secure.gravatar.com/avatar/0df2c39bfb30a35de14213e057ee7877?s=100&amp;d=mm" class="avatar avatar-100" height="50" width="50" src="./SSR一键安装脚本 (ShadowsocksR一键安装教程)-SSR中文网_files/avatar-default.png"></div><div class="comt-main" id="div-comment-271"><p>多认真看看教程</p>
+<div class="comt-meta"><span class="comt-author">豆包</span>2个月前 (03-14)<a rel="nofollow" class="comment-reply-link" href="javascript:;" onclick="return addComment.moveForm( &quot;div-comment-271&quot;, &quot;271&quot;, &quot;respond&quot;, &quot;31&quot; )" aria-label="回复给豆包">回复</a></div></div></li><!-- #comment-## -->
+<li class="comment byuser comment-author-asuan bypostauthor odd alt depth-2" id="comment-279"><div class="comt-avatar"><img data-src="https://secure.gravatar.com/avatar/dddb228816732e0ce5a5cea5f1e9108e?s=100&amp;d=mm" class="avatar avatar-100" height="50" width="50" src="./SSR一键安装脚本 (ShadowsocksR一键安装教程)-SSR中文网_files/avatar-default.png"></div><div class="comt-main" id="div-comment-279"><p>安卓客户端插件只支持SS，电脑端支持SSR</p>
+<div class="comt-meta"><span class="comt-author">阿酸</span>2个月前 (03-15)<a rel="nofollow" class="comment-reply-link" href="javascript:;" onclick="return addComment.moveForm( &quot;div-comment-279&quot;, &quot;279&quot;, &quot;respond&quot;, &quot;31&quot; )" aria-label="回复给阿酸">回复</a></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-280"><span class="comt-f">#13</span><div class="comt-avatar"><img data-src="https://secure.gravatar.com/avatar/4b0795b87b67a375058869463a7fc3d8?s=100&amp;d=mm" class="avatar avatar-100" height="50" width="50" src="./SSR一键安装脚本 (ShadowsocksR一键安装教程)-SSR中文网_files/avatar-default.png"></div><div class="comt-main" id="div-comment-280"><p>有没有 windows下的SSR服务器端 链接提供 谢谢</p>
+<div class="comt-meta"><span class="comt-author">xh</span>2个月前 (03-15)<a rel="nofollow" class="comment-reply-link" href="javascript:;" onclick="return addComment.moveForm( &quot;div-comment-280&quot;, &quot;280&quot;, &quot;respond&quot;, &quot;31&quot; )" aria-label="回复给xh">回复</a></div></div><ul class="children">
+<li class="comment byuser comment-author-asuan bypostauthor odd alt depth-2" id="comment-286"><div class="comt-avatar"><img data-src="https://secure.gravatar.com/avatar/dddb228816732e0ce5a5cea5f1e9108e?s=100&amp;d=mm" class="avatar avatar-100" height="50" width="50" src="./SSR一键安装脚本 (ShadowsocksR一键安装教程)-SSR中文网_files/avatar-default.png"></div><div class="comt-main" id="div-comment-286"><p>暂时没有这个版本</p>
+<div class="comt-meta"><span class="comt-author">阿酸</span>1个月前 (03-16)<a rel="nofollow" class="comment-reply-link" href="javascript:;" onclick="return addComment.moveForm( &quot;div-comment-286&quot;, &quot;286&quot;, &quot;respond&quot;, &quot;31&quot; )" aria-label="回复给阿酸">回复</a></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-330"><span class="comt-f">#14</span><div class="comt-avatar"><img data-src="https://secure.gravatar.com/avatar/82c35191e9209f4a37d7e2b66cc12cc8?s=100&amp;d=mm" class="avatar avatar-100" height="50" width="50" src="./SSR一键安装脚本 (ShadowsocksR一键安装教程)-SSR中文网_files/avatar-default.png"></div><div class="comt-main" id="div-comment-330"><p>酸酸乳 能用vultr额外添加的IP吗</p>
+<div class="comt-meta"><span class="comt-author">promox</span>3周前 (04-08)<a rel="nofollow" class="comment-reply-link" href="javascript:;" onclick="return addComment.moveForm( &quot;div-comment-330&quot;, &quot;330&quot;, &quot;respond&quot;, &quot;31&quot; )" aria-label="回复给promox">回复</a></div></div><ul class="children">
+<li class="comment byuser comment-author-asuan bypostauthor odd alt depth-2" id="comment-333"><div class="comt-avatar"><img data-src="https://secure.gravatar.com/avatar/dddb228816732e0ce5a5cea5f1e9108e?s=100&amp;d=mm" class="avatar avatar-100" height="50" width="50" src="./SSR一键安装脚本 (ShadowsocksR一键安装教程)-SSR中文网_files/avatar-default.png"></div><div class="comt-main" id="div-comment-333"><p>理论上是可行的，可以尝试一下</p>
+<div class="comt-meta"><span class="comt-author">阿酸</span>3周前 (04-09)<a rel="nofollow" class="comment-reply-link" href="javascript:;" onclick="return addComment.moveForm( &quot;div-comment-333&quot;, &quot;333&quot;, &quot;respond&quot;, &quot;31&quot; )" aria-label="回复给阿酸">回复</a></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-348"><span class="comt-f">#15</span><div class="comt-avatar"><img data-src="https://secure.gravatar.com/avatar/cb8c6dcdb1dd597caf325a236a07ac6f?s=100&amp;d=mm" class="avatar avatar-100" height="50" width="50" src="./SSR一键安装脚本 (ShadowsocksR一键安装教程)-SSR中文网_files/avatar-default.png"></div><div class="comt-main" id="div-comment-348"><p>你好，站长，经指点手机与电脑均已实验上网。昨晚回家之后尝试在路由器上设置，路由器是斐讯K2P，买的时候让卖家帮刷的官改固件。在配置相应参数的时候，路由器的加密方式和协议可选项很少，与站在提供的WinCP上具有相同项的只有加密方式上的rc4-md5-6。而路由器传输协议上只有origin, verify_simple, verify_sha1, auth_sha1, auth_sha1_v2，与WinCP上除了origin外所有选项均无相对应选择，网上搜了一遍不建议用origin，那请问这种情况能如何解决呢？谢谢</p>
+<div class="comt-meta"><span class="comt-author">零用钱</span>2周前 (04-12)<a rel="nofollow" class="comment-reply-link" href="javascript:;" onclick="return addComment.moveForm( &quot;div-comment-348&quot;, &quot;348&quot;, &quot;respond&quot;, &quot;31&quot; )" aria-label="回复给零用钱">回复</a></div></div><ul class="children">
+<li class="comment byuser comment-author-asuan bypostauthor odd alt depth-2" id="comment-353"><div class="comt-avatar"><img data-src="https://secure.gravatar.com/avatar/dddb228816732e0ce5a5cea5f1e9108e?s=100&amp;d=mm" class="avatar avatar-100" height="50" width="50" src="./SSR一键安装脚本 (ShadowsocksR一键安装教程)-SSR中文网_files/avatar-default.png"></div><div class="comt-main" id="div-comment-353"><p>可能是固件版本太老，网上找找新固件。或者更改服务器上的SSR参数，与路由器端适配。</p>
+<div class="comt-meta"><span class="comt-author">阿酸</span>2周前 (04-15)<a rel="nofollow" class="comment-reply-link" href="javascript:;" onclick="return addComment.moveForm( &quot;div-comment-353&quot;, &quot;353&quot;, &quot;respond&quot;, &quot;31&quot; )" aria-label="回复给阿酸">回复</a></div></div><ul class="children">
+<li class="comment even depth-3" id="comment-381"><div class="comt-avatar"><img data-src="https://secure.gravatar.com/avatar/cb8c6dcdb1dd597caf325a236a07ac6f?s=100&amp;d=mm" class="avatar avatar-100" height="50" width="50" src="./SSR一键安装脚本 (ShadowsocksR一键安装教程)-SSR中文网_files/avatar-default.png"></div><div class="comt-main" id="div-comment-381"><p>你好，站长，现在又出现一个问题，这段时间外网速度非常慢，打算找办法加速一下或者重新租赁一个服务器，可是现在打开WinSCP之后一直无法用root登陆，显示拒绝访问，不管是登录现有地址还是新租赁地址，皆无法登陆，在网上找了很久也没找到解决方法，请问该如何处理呢？目前vultr的地址就公司的电脑和家里的路由器在使用</p>
+<div class="comt-meta"><span class="comt-author">零用钱</span>4天前<a rel="nofollow" class="comment-reply-link" href="javascript:;" onclick="return addComment.moveForm( &quot;div-comment-381&quot;, &quot;381&quot;, &quot;respond&quot;, &quot;31&quot; )" aria-label="回复给零用钱">回复</a></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-354"><span class="comt-f">#16</span><div class="comt-avatar"><img data-src="https://secure.gravatar.com/avatar/bc3c427b883f3cd7ae356700f442971e?s=100&amp;d=mm" class="avatar avatar-100" height="50" width="50" src="./SSR一键安装脚本 (ShadowsocksR一键安装教程)-SSR中文网_files/avatar-default.png"></div><div class="comt-main" id="div-comment-354"><p>按照步骤安装后：运行状态正常 连接无问题 端口开放 连上无网 不跑流量 ，如何解决啊</p>
+<div class="comt-meta"><span class="comt-author">oneinten</span>2周前 (04-16)<a rel="nofollow" class="comment-reply-link" href="javascript:;" onclick="return addComment.moveForm( &quot;div-comment-354&quot;, &quot;354&quot;, &quot;respond&quot;, &quot;31&quot; )" aria-label="回复给oneinten">回复</a></div></div></li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-360"><span class="comt-f">#17</span><div class="comt-avatar"><img data-src="https://secure.gravatar.com/avatar/8271264152654ce4ae6c584aa2275d8e?s=100&amp;d=mm" class="avatar avatar-100" height="50" width="50" src="./SSR一键安装脚本 (ShadowsocksR一键安装教程)-SSR中文网_files/avatar-default.png"></div><div class="comt-main" id="div-comment-360"><p>ssr 服务端如何查看请求日志？？</p>
+<div class="comt-meta"><span class="comt-author">Cyao</span>1周前 (04-19)<a rel="nofollow" class="comment-reply-link" href="javascript:;" onclick="return addComment.moveForm( &quot;div-comment-360&quot;, &quot;360&quot;, &quot;respond&quot;, &quot;31&quot; )" aria-label="回复给Cyao">回复</a></div></div></li><!-- #comment-## -->
+	</ol>
+	<div class="pagenav">
+			</div>
+</div>
+	</div>
+	</div>
+	<div class="sidebar">
+<div class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><a href="https://ssr.tools/55" target="_blank" rel="noopener"><center><p style="background:#FF5E52;padding:4px;"><font color="white">适合做代理的国外VPS服务器</font></p></center></a>
+<a href="https://ssr.tools/72" target="_blank" rel="noopener"><center><p style="background:orange;padding:4px"><font color="black">服务器远程管理工具下载</font></p></center></a>
+<a href="https://ssr.tools/199" target="_blank" rel="noopener"><center><p style="background:#FF5E52;padding:4px"><font color="white">BBR 一键安装脚本</font></p></center></a>
+<a href="https://ssr.tools/550" target="_blank" rel="noopener"><center><p style="background:orange;padding:4px"><font color="black">暴力魔改BBR 一键安装</font></p></center></a>
+<a href="https://ssr.tools/533" target="_blank" rel="noopener"><center><p style="background:#FF5E52;padding:4px"><font color="white">锐速 一键安装脚本</font></p></center></a>
+<a href="https://ssr.tools/588" target="_blank" rel="noopener"><center><p style="background:orange;padding:4px"><font color="black">KCPTUN 一键安装</font></p></center></a>
+<a href="https://ssr.tools/31" target="_blank" rel="noopener"><center><p style="background:#FF5E52;padding:4px;margin-top:10px;"><font color="white">SSR 一键安装脚本</font></p></center></a>
+<a href="https://ssr.tools/136" target="_blank" rel="noopener"><center><p style="background:orange;padding:4px"><font color="black">SSR 路由客户端</font></p></center></a>
+<a href="https://ssr.tools/82" target="_blank" rel="noopener"><center><p style="background:#FF5E52;padding:4px"><font color="white">SSR 电脑客户端</font></p></center></a>
+<a href="https://ssr.tools/97" target="_blank" rel="noopener"><center><p style="background:orange;padding:4px"><font color="black">SSR 安卓客户端</font></p></center></a>
+<a href="https://ssr.tools/122" target="_blank" rel="noopener"><center><p style="background:#FF5E52;padding:4px"><font color="white">SSR iOS客户端</font></p></center></a>
+<a href="https://ssr.tools/164" target="_blank" rel="noopener"><center><p style="background:orange;padding:4px"><font color="black">SSR Mac客户端</font></p></center></a>
+<a href="https://ssr.tools/269" target="_blank" rel="noopener"><center><p style="background:#FF5E52;padding:4px;margin-top:10px;"><font color="white">V2Ray一键安装脚本</font></p></center></a>
+<a href="https://ssr.tools/276" target="_blank" rel="noopener"><center><p style="background:orange;padding:4px"><font color="black">V2Ray 电脑客户端</font></p></center></a>
+<a href="https://ssr.tools/285" target="_blank" rel="noopener"><center><p style="background:#FF5E52;padding:4px;"><font color="white">V2Ray 安卓客户端</font></p></center></a>
+<a href="https://ssr.tools/295" target="_blank" rel="noopener"><center><p style="background:orange;padding:4px"><font color="black">V2Ray iOS客户端</font></p></center></a>
+<a href="https://ssr.tools/308" target="_blank" rel="noopener"><center><p style="background:#FF5E52;padding:4px;"><font color="white">V2Ray Mac客户端</font></p></center></a></div></div><div class="widget widget_ui_asb affix" style="top: 78px;"><div class="item"><a href="https://ssr.tools/goto/vultr" target="_blank"><img src="./SSR一键安装脚本 (ShadowsocksR一键安装教程)-SSR中文网_files/2018-10-19_151637.png"></a></div></div><div class="widget widget_ui_asb affix" style="top: 213px;"><div class="item"><a href="https://ssr.tools/999" target="_blank"><img src="./SSR一键安装脚本 (ShadowsocksR一键安装教程)-SSR中文网_files/2019-02-16_153626.png"></a></div></div><div class="widget widget_ui_comments"><h3>最新评论</h3><ul><li><a href="https://ssr.tools/626#comment-383" title="KCPTUN路由器客户端下载安装及使用教程 Openwrt/LEDE适用上的评论"><img data-src="https://secure.gravatar.com/avatar/458ff2587b62b31a058ba5ff8d4c8f18?s=100&amp;d=mm" class="avatar avatar-100" height="50" width="50" src="./SSR一键安装脚本 (ShadowsocksR一键安装教程)-SSR中文网_files/458ff2587b62b31a058ba5ff8d4c8f18.png" style="display: block;"> <strong>cc</strong> 2天前说：<br>能否出一个kcptun在梅林固件上的详细设置教程呢</a></li><li><a href="https://ssr.tools/626#comment-382" title="KCPTUN路由器客户端下载安装及使用教程 Openwrt/LEDE适用上的评论"><img data-src="https://secure.gravatar.com/avatar/2a093b76b8d5364d8a0233105ba90d4f?s=100&amp;d=mm" class="avatar avatar-100" height="50" width="50" src="./SSR一键安装脚本 (ShadowsocksR一键安装教程)-SSR中文网_files/2a093b76b8d5364d8a0233105ba90d4f.png" style="display: block;"> <strong>MzJwxCtt</strong> 3天前说：<br>感谢感谢感谢！！！</a></li><li><a href="https://ssr.tools/31#comment-381" title="SSR一键安装脚本 (ShadowsocksR一键安装教程)上的评论"><img data-src="https://secure.gravatar.com/avatar/cb8c6dcdb1dd597caf325a236a07ac6f?s=100&amp;d=mm" class="avatar avatar-100" height="50" width="50" src="./SSR一键安装脚本 (ShadowsocksR一键安装教程)-SSR中文网_files/cb8c6dcdb1dd597caf325a236a07ac6f.png" style="display: block;"> <strong>零用钱</strong> 4天前说：<br>你好，站长，现在又出现一个问题，这段时间外网速度非常慢，打算找办法加速一下或者重新租赁一个服务器，可是现在打开WinSCP之后一直无法用root登陆，显示拒绝访问，不管是登录现有地址还是新租赁地址，皆</a></li><li><a href="https://ssr.tools/82#comment-379" title="SSR Windows客户端下载、安装及使用教程（ShadowSocksR最新版电脑客户端）上的评论"><img data-src="https://secure.gravatar.com/avatar/6cdb014f17b25fde882b1706c4045632?s=100&amp;d=mm" class="avatar avatar-100" height="50" width="50" src="./SSR一键安装脚本 (ShadowsocksR一键安装教程)-SSR中文网_files/6cdb014f17b25fde882b1706c4045632.png" style="display: block;"> <strong>小飞飞</strong> 5天前说：<br>我用手机ios的shadowrocket连接的时候延迟检测显示超时，可是我电脑端用的没问题，这是不是我哪里没设置对啊</a></li><li><a href="https://ssr.tools/208#comment-376" title="搬瓦工VPS服务器购买及使用教程 还有优惠码哦上的评论"><img data-src="https://secure.gravatar.com/avatar/24d64d9ff7540f9b02071abf4755bcc2?s=100&amp;d=mm" class="avatar avatar-100" height="50" width="50" src="./SSR一键安装脚本 (ShadowsocksR一键安装教程)-SSR中文网_files/24d64d9ff7540f9b02071abf4755bcc2.png" style="display: block;"> <strong>peiyue</strong> 5天前说：<br>怎么这么慢啊</a></li><li><a href="https://ssr.tools/72#comment-375" title="VPS服务器远程管理软件 Winscp及Putty下载、安装、使用教程上的评论"><img data-src="https://secure.gravatar.com/avatar/6cdb014f17b25fde882b1706c4045632?s=100&amp;d=mm" class="avatar avatar-100" height="50" width="50" src="./SSR一键安装脚本 (ShadowsocksR一键安装教程)-SSR中文网_files/6cdb014f17b25fde882b1706c4045632.png" style="display: block;"> <strong>小飞飞</strong> 5天前说：<br>为什么登录的时候会让我再输入一遍密码但是输入后却显示拒绝访问呢</a></li></ul></div></div></section>
+
+
+<footer class="footer">
+	<div class="container">
+					<div class="flinks">
+				<strong>友情链接</strong>
+	<ul class="xoxo blogroll">
+<li><a href="https://ssr.tools/goto/banwagonhost" target="_blank">搬瓦工官网</a></li>
+<li><a href="https://ssr.tools/goto/vultr" target="_blank">VULTR 官网</a></li>
+
+	</ul>
+
+			</div>
+							<div class="fcode">
+				本站宗旨是为方便科研及外贸人员，请勿用于其它用途！
+站内所有内容及资源，均来自网络。本站自身不提供任何资源的储存及下载，不提供代理VPN服务。			</div>
+				<p>© 2019 <a href="https://ssr.tools/">SSR中文网</a> &nbsp; </p>
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async="" src="./SSR一键安装脚本 (ShadowsocksR一键安装教程)-SSR中文网_files/js"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-122665768-1');
+</script>	</div>
+</footer>
+
+
+<script>
+window.jsui={
+	www: 'https://ssr.tools',
+	uri: 'https://ssr.tools/wp-content/themes/dux',
+	ver: '5.0',
+	roll: ["2","3"],
+	ajaxpager: '0',
+	url_rp: '',
+	qq_id: '',
+	qq_tip: ''
+};
+</script>
+<a rel="nofollow" style="display:none;" href="https://ssr.tools/?blackhole=56b347380c" title="Blackhole for Bad Bots">Do NOT follow this link or you will be banned from the site!</a>
+	<div id="wpcp-error-message" class="msgmsg-box-wpcp warning-wpcp hideme"><span>error: </span></div>
+	<script>
+	var timeout_result;
+	function show_wpcp_message(smessage)
+	{
+		if (smessage !== "")
+			{
+			var smessage_text = '<span>Alert: </span>'+smessage;
+			document.getElementById("wpcp-error-message").innerHTML = smessage_text;
+			document.getElementById("wpcp-error-message").className = "msgmsg-box-wpcp warning-wpcp showme";
+			clearTimeout(timeout_result);
+			timeout_result = setTimeout(hide_message, 3000);
+			}
+	}
+	function hide_message()
+	{
+		document.getElementById("wpcp-error-message").className = "msgmsg-box-wpcp warning-wpcp hideme";
+	}
+	</script>
+	<style type="text/css">
+	#wpcp-error-message {
+	    direction: ltr;
+	    text-align: center;
+	    transition: opacity 900ms ease 0s;
+	    z-index: 99999999;
+	}
+	.hideme {
+    	opacity:0;
+    	visibility: hidden;
+	}
+	.showme {
+    	opacity:1;
+    	visibility: visible;
+	}
+	.msgmsg-box-wpcp {
+		border-radius: 10px;
+		color: #555;
+		font-family: Tahoma;
+		font-size: 11px;
+		margin: 10px;
+		padding: 10px 36px;
+		position: fixed;
+		width: 255px;
+		top: 50%;
+  		left: 50%;
+  		margin-top: -10px;
+  		margin-left: -130px;
+  		-webkit-box-shadow: 0px 0px 34px 2px rgba(242,191,191,1);
+		-moz-box-shadow: 0px 0px 34px 2px rgba(242,191,191,1);
+		box-shadow: 0px 0px 34px 2px rgba(242,191,191,1);
+	}
+	.msgmsg-box-wpcp span {
+		font-weight:bold;
+		text-transform:uppercase;
+	}
+	.error-wpcp {		background:#ffecec url('https://ssr.tools/wp-content/plugins/wp-content-copy-protector/images/error.png') no-repeat 10px 50%;
+		border:1px solid #f5aca6;
+	}
+	.success {
+		background:#e9ffd9 url('https://ssr.tools/wp-content/plugins/wp-content-copy-protector/images/success.png') no-repeat 10px 50%;
+		border:1px solid #a6ca8a;
+	}
+	.warning-wpcp {
+		background:#ffecec url('https://ssr.tools/wp-content/plugins/wp-content-copy-protector/images/warning.png') no-repeat 10px 50%;
+		border:1px solid #f5aca6;
+	}
+	.notice {
+		background:#e3f7fc url('https://ssr.tools/wp-content/plugins/wp-content-copy-protector/images/notice.png') no-repeat 10px 50%;
+		border:1px solid #8ed9f6;
+	}
+    </style>
+<script type="text/javascript">
+/* <![CDATA[ */
+var CrayonSyntaxSettings = {"version":"_2.7.2_beta","is_admin":"0","ajaxurl":"https:\/\/ssr.tools\/wp-admin\/admin-ajax.php","prefix":"crayon-","setting":"crayon-setting","selected":"crayon-setting-selected","changed":"crayon-setting-changed","special":"crayon-setting-special","orig_value":"data-orig-value","debug":""};
+var CrayonSyntaxStrings = {"copy":"Press %s to Copy, %s to Paste","minimize":"Click To Expand Code"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./SSR一键安装脚本 (ShadowsocksR一键安装教程)-SSR中文网_files/crayon.min.js.下载"></script>
+<script type="text/javascript" src="./SSR一键安装脚本 (ShadowsocksR一键安装教程)-SSR中文网_files/bootstrap.min.js.下载"></script>
+<script type="text/javascript" src="./SSR一键安装脚本 (ShadowsocksR一键安装教程)-SSR中文网_files/loader.js.下载"></script>
+<script type="text/javascript" src="./SSR一键安装脚本 (ShadowsocksR一键安装教程)-SSR中文网_files/wp-embed.min.js.下载"></script>
+
+    <div class="m-mask"></div>    <div class="rollbar" style="display: block;"><ul><li><a href="javascript:(scrollTo(&#39;#comments&#39;,-15));"><i class="fa fa-comments"></i></a><h6>去评论<i></i></h6></li><li><a href="javascript:(scrollTo());"><i class="fa fa-angle-up"></i></a><h6>去顶部<i></i></h6></li>    </ul></div><ul class="m-navbar">
+			<li id="menu-item-361" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-361"><a href="https://ssr.tools/"><i class="fa fa-home"></i> 主页</a></li>
+<li id="menu-item-149" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-149"><a href="https://ssr.tools/server"><i class="fa fa-server"></i> 服务器 <i class="fa fa-angle-down"></i></a>
+<ul class="sub-menu">
+	<li id="menu-item-256" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-256"><a href="https://ssr.tools/252">SSR 搭建流程</a></li>
+	<li id="menu-item-241" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-241"><a href="https://ssr.tools/55">服务器 推荐</a></li>
+	<li id="menu-item-237" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-237"><a href="https://ssr.tools/72">远程管理工具</a></li>
+	<li id="menu-item-764" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-764"><a href="https://ssr.tools/759">一键测试脚本</a></li>
+	<li id="menu-item-793" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-793"><a href="https://ssr.tools/772">VPS被墙检测</a></li>
+	<li id="menu-item-792" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-792"><a href="https://ssr.tools/780">TCP阻断解决</a></li>
+	<li id="menu-item-239" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-239"><a href="https://ssr.tools/208">搬瓦工攻略</a></li>
+	<li id="menu-item-238" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-238"><a href="https://ssr.tools/216">Vultr 攻略</a></li>
+	<li id="menu-item-1061" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-1061"><a href="https://ssr.tools/999">JustMySock</a></li>
+</ul>
+<i class="fa fa-angle-down faa"></i></li>
+<li id="menu-item-178" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-178"><a href="https://ssr.tools/download"><i class="fa fa-download"></i> 客户端 <i class="fa fa-angle-down"></i></a>
+<ul class="sub-menu">
+	<li id="menu-item-179" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-179"><a href="https://ssr.tools/175">SSR 下载汇总</a></li>
+	<li id="menu-item-181" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-181"><a href="https://ssr.tools/136">SSR 路由器客户端</a></li>
+	<li id="menu-item-184" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-184"><a href="https://ssr.tools/82">SSR 电脑客户端</a></li>
+	<li id="menu-item-183" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-183"><a href="https://ssr.tools/97">SSR 安卓客户端</a></li>
+	<li id="menu-item-182" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-182"><a href="https://ssr.tools/122">SSR iOS 客户端</a></li>
+	<li id="menu-item-180" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-180"><a href="https://ssr.tools/164">SSR MAC 客户端</a></li>
+	<li id="menu-item-743" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-743"><a href="https://ssr.tools/495">GFWList 规则</a></li>
+</ul>
+<i class="fa fa-angle-down faa"></i></li>
+<li id="menu-item-81" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-81"><a href="https://ssr.tools/gongju"><i class="fa fa-life-ring"></i> 备胎 <i class="fa fa-angle-down"></i></a>
+<ul class="sub-menu">
+	<li id="menu-item-435" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-435"><a href="https://ssr.tools/428">Shadowsocks</a></li>
+	<li id="menu-item-322" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-322"><a href="https://ssr.tools/265">V2Ray 搭建</a></li>
+	<li id="menu-item-1201" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-1201"><a href="https://ssr.tools/1198">WireGuard</a></li>
+	<li id="menu-item-980" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-980"><a href="https://ssr.tools/976">Brook 搭建</a></li>
+</ul>
+<i class="fa fa-angle-down faa"></i></li>
+<li id="menu-item-570" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-570"><a href="https://ssr.tools/jiasu"><i class="fa fa-cloud-upload"></i>  加速 <i class="fa fa-angle-down"></i></a>
+<ul class="sub-menu">
+	<li id="menu-item-685" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-685"><a href="https://ssr.tools/674">加速效果 对比</a></li>
+	<li id="menu-item-686" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-686"><a href="https://ssr.tools/668">KVM 加速方案</a></li>
+	<li id="menu-item-687" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-687"><a href="https://ssr.tools/663">OVZ  加速方案</a></li>
+	<li id="menu-item-245" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-245"><a href="https://ssr.tools/199">原版BBR 一键</a></li>
+	<li id="menu-item-571" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-571"><a href="https://ssr.tools/550">魔改BBR 一键</a></li>
+	<li id="menu-item-572" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-572"><a href="https://ssr.tools/533">锐速 一键安装</a></li>
+	<li id="menu-item-587" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-587"><a href="https://ssr.tools/573">锐速 Windows</a></li>
+	<li id="menu-item-604" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-604"><a href="https://ssr.tools/588">KCPTUN 一键</a></li>
+	<li id="menu-item-688" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-688"><a href="https://ssr.tools/637">KCPTUN 客户端</a></li>
+</ul>
+<i class="fa fa-angle-down faa"></i></li>
+<li id="menu-item-22" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-22"><a href="https://ssr.tools/rumen"><i class="fa fa-share-square"></i> 入门 <i class="fa fa-angle-down"></i></a>
+<ul class="sub-menu">
+	<li id="menu-item-242" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-242"><a href="https://ssr.tools/18">SSR 简单介绍</a></li>
+	<li id="menu-item-243" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-243"><a href="https://ssr.tools/25">SSR 所需条件</a></li>
+	<li id="menu-item-244" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-244"><a href="https://ssr.tools/202">SSR 注意事项</a></li>
+</ul>
+<i class="fa fa-angle-down faa"></i></li>
+<li id="menu-item-23" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-ancestor current-menu-parent current-post-parent menu-item-has-children menu-item-23"><a href="https://ssr.tools/jinjie"><i class="fa fa-graduation-cap"></i> 进阶 <i class="fa fa-angle-down"></i></a>
+<ul class="sub-menu">
+	<li id="menu-item-248" class="menu-item menu-item-type-post_type menu-item-object-post current-menu-item menu-item-248"><a href="https://ssr.tools/31">SSR 一键安装</a></li>
+	<li id="menu-item-247" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-247"><a href="https://ssr.tools/116">SSR 内网共享</a></li>
+	<li id="menu-item-262" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-262"><a href="https://ssr.tools/258">SSR 限连 限速</a></li>
+	<li id="menu-item-246" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-246"><a href="https://ssr.tools/194">SSR 多用户教程</a></li>
+	<li id="menu-item-758" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-758"><a href="https://ssr.tools/749">SSR 端口转发</a></li>
+</ul>
+<i class="fa fa-angle-down faa"></i></li>
+<li id="menu-item-115" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-115"><a href="https://ssr.tools/zhoubian"><i class="fa fa-sitemap"></i> 周边 <i class="fa fa-angle-down"></i></a>
+<ul class="sub-menu">
+	<li id="menu-item-250" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-250"><a href="https://ssr.tools/104">美国 Apple ID</a></li>
+	<li id="menu-item-251" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-251"><a href="https://ssr.tools/45">Youtube开启4K</a></li>
+	<li id="menu-item-249" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-249"><a href="https://ssr.tools/150">SwitchyOmega</a></li>
+	<li id="menu-item-340" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-340"><a href="https://ssr.tools/325">ShadowRocket</a></li>
+	<li id="menu-item-341" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-341"><a href="https://ssr.tools/125">iOS Potatso Lite</a></li>
+	<li id="menu-item-436" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-436"><a href="https://ssr.tools/354">安卓APP神器</a></li>
+	<li id="menu-item-710" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-710"><a href="https://ssr.tools/680">一键DD WIN</a></li>
+	<li id="menu-item-709" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-709"><a href="https://ssr.tools/693">一键DD Linux</a></li>
+	<li id="menu-item-708" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-708"><a href="https://ssr.tools/700">GoogleDrive直链</a></li>
+</ul>
+<i class="fa fa-angle-down faa"></i></li>
+							<li class="navto-search"><a href="javascript:;" class="search-show active"><i class="fa fa-search"></i></a></li>
+					</ul>			<div class="sign">			    <div class="sign-mask"></div>			    <div class="container">			        <a href="javascript:;" class="close-link signclose-loader"><i class="fa fa-close"></i></a>			        <div class="sign-tips"></div>			        <form id="sign-in">  			            <h3><small class="signup-loader">切换注册</small>登录</h3>			            <h6>			                <label for="inputEmail">用户名或邮箱</label>			                <input type="text" name="username" class="form-control" id="inputEmail" placeholder="用户名或邮箱">			            </h6>			            <h6>			                <label for="inputPassword">密码</label>			                <input type="password" name="password" class="form-control" id="inputPassword" placeholder="登录密码">			            </h6>			            <div class="sign-submit">			                <input type="button" class="btn btn-primary signsubmit-loader" name="submit" value="登录">  			                <input type="hidden" name="action" value="signin">			                <label><input type="checkbox" checked="checked" name="remember" value="forever">记住我</label>			            </div></form>			        <form id="sign-up"> 			            <h3><small class="signin-loader">切换登录</small>注册</h3>			            <h6>			                <label for="inputName">昵称</label>			                <input type="text" name="name" class="form-control" id="inputName" placeholder="设置昵称">			            </h6>			            <h6>			                <label for="inputEmail">邮箱</label>			                <input type="email" name="email" class="form-control" id="inputEmail" placeholder="邮箱">			            </h6>			            <div class="sign-submit">			                <input type="button" class="btn btn-primary btn-block signsubmit-loader" name="submit" value="快速注册">  			                <input type="hidden" name="action" value="signup">  			            </div>			        </form>			    </div>			</div>		</body><div><div class="gr_-editor gr-iframe-first-load" style="display: none;"><div class="gr_-editor_back"></div><iframe class="gr_-ifr gr-_dialog-content" src="./SSR一键安装脚本 (ShadowsocksR一键安装教程)-SSR中文网_files/saved_resource.html"></iframe></div></div><grammarly-card><div></div></grammarly-card><span class="gr__tooltip"><span class="gr__tooltip-content"></span><i class="gr__tooltip-logo"></i><span class="gr__triangle"></span></span></html>

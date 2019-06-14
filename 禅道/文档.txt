@@ -1,0 +1,90 @@
+1.开源版安装包下载
+[root@iZbp ~]# wget http://dl.cnezsoft.com/zentao/9.0.1/ZenTaoPMS.9.0.1.zbox_64.tar.gz
+
+ 
+
+2.直接解压安装包到/opt目录下
+[root@iZbp ~]# tar -zxvf ZenTaoPMS.9.0.1.zbox_64.tar.gz -C /opt
+
+ 
+
+3.修改禅道自带apache、mysql端口
+为了不占用Server上默认的80、3306端口，我们修改禅道自带的apache、mysql端口
+
+ 
+
+修改禅道自带apache端口：
+
+[root@iZbp logs]# /opt/zbox/zbox -ap 9000
+
+修改禅道自带mysql端口：
+
+[root@iZbp logs]# /opt/zbox/zbox -mp 9001
+
+ 
+
+4.重启禅道服务
+[root@iZbp11rfoyeescusr9ha9qZ ~]# /opt/zbox/zbox start
+
+Apache is running
+
+Mysql is running
+
+ 
+
+执行/opt/zbox/zbox start 命令开启Apache和Mysql。
+
+执行/opt/zbox/zbox stop 命令停止Apache和Mysql。
+
+执行/opt/zbox/zbox restart 命令重启Apache和Mysql。
+
+可以使用/opt/zbox/zbox -h命令来获取关于zbox命令的帮助
+
+ 
+
+5.创建数据库账号
+[root@iZbp logs]# /opt/zbox/auth/adduser.sh
+
+This tool is used to add user to access adminer
+
+Account: adminer
+
+Password: Adding password for user adminer
+
+注：数据库的用户名：root，密码为空。数据库管理用的是adminer，但是为了安全，访问adminer的时候需要身份验证，需要运行脚本添加账户
+
+命令行登录禅道自带mysql数据库：
+
+/opt/zbox/bin/mysql -u root -P 3306 -p
+
+命令行导入备份的数据：
+
+/opt/zbox/bin/mysql -u root -P 3306 -p zentaopro < zentao.sql
+
+ 
+
+如果是首次安装“禅道”，此处略过；如果之前已经装有“禅道”，想导入之前的数据，则可以导入备份的zentao.sql文件；
+
+6.配置iptables防火墙规则，允许端口访问
+[root@iZbp logs]#iptables -A INPUT -p tcp --dport 9000 -j ACCEPT
+
+[root@iZbp logs]#iptables -A INPUT -p tcp --dport 9001 -j ACCEPT
+
+ 
+
+重启防火墙，使规则生效：
+
+[root@iZbp logs]#service iptables save
+
+[root@iZbp logs]#service iptables restart
+
+ 
+
+7.浏览器访问
+http://x.x.x.x:9000
+
+客户端：
+
+http://x.x.x.x:9000/zentao/user-login-L3plbnRhby8=.html
+
+默认账号密码：admin/123456
